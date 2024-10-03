@@ -40,7 +40,7 @@
   <xs:element name="GetProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Back_End" minOccurs="0" name="GetProductsResult" nillable="true" type="q1:ArrayOfProduct" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Back_End" minOccurs="0" name="GetProductsResult" nillable="true" type="q1:ArrayOfProductDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
