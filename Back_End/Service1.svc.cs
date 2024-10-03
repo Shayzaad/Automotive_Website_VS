@@ -65,27 +65,28 @@ namespace Back_End
 
         //Returns list of products with quantity greater than 1
         //DefaultIfEmpty() - Brings back all that you find, or nothing
-        public List<Product> GetProducts()
+        public List<ProductDTO> GetProducts()
         {
-            dynamic product = null;
-            product = (from p in db.Products
-                       where p.StockQuantity > 1
-                       select p).DefaultIfEmpty();
+            // Query to get products with StockQuantity greater than 1
+            var products = from p in db.Products
+                           where p.StockQuantity > 1
+                           select new ProductDTO
+                           {
+                               ProductID = p.ProductID,
+                               CategoryID = p.CategoryID,
+                               Name = p.Name,
+                               Image = p.Image,
+                               Price = p.Price,
+                               DiscountedPrice = p.DiscountedPrice,
+                               Description = p.Description,
+                               Rating = p.Rating,
+                               StockQuantity = p.StockQuantity
+                           };
 
-            if (product != null)
-            {
-                //Create Product list and add products to list
-                List<Product> ListProd = new List<Product>();
-                foreach (Product p in product)
-                {
-                    ListProd.Add(p);
-                }
-                return ListProd;
-            }
-            else
-            {
-                return null;
-            }
+            // Convert the result to a List
+            List<ProductDTO> ListProd = products.ToList();
+
+            return ListProd; // Return the list (can be empty, but not null)
         }
 
         //Returns a single product
@@ -104,6 +105,18 @@ namespace Back_End
                 return null;
             }
         }
+    }
+    public class ProductDTO
+    {
+        public int ProductID { get; set; } // Unique identifier for the product
+        public int CategoryID { get; set; } // Foreign key referencing the Categories table
+        public string Name { get; set; } // Name of the product
+        public string Image { get; set; } // URL or path to the product image
+        public decimal Price { get; set; } // Price of the product
+        public decimal? DiscountedPrice { get; set; } // Discounted price, nullable if no discount is available
+        public string Description { get; set; } // Description of the product
+        public string Rating { get; set; } // Rating of the product, possibly as a string representation
+        public int StockQuantity { get; set; } // Quantity of the product in stock
     }
 }
 
