@@ -18,7 +18,7 @@ namespace Back_End
         bool Login(string Email, string Password);
 
         [OperationContract]
-        List<Product> GetProducts();
+        List<ProductDTO> GetProducts();
 
         [OperationContract]
         Product GetProduct(int ID);
