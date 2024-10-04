@@ -19,20 +19,16 @@ namespace Front_End
 
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
-            int Log = SC.Login(txtEmail.Text, Secrecy.HashPassword(txtPassword.Text));
+            bool SignedIn = SC.Login(txtEmail.Text, Secrecy.HashPassword(txtPassword.Text));
 
-            if (Log == 0 || Log == 1)
+            if (SignedIn == true)
             {
-                // Set the session for the user
-                Session["UserType"] = Log.ToString();
-
-                Session["User"] = SC.GetUserByEmail(txtEmail.Text);
-
                 Response.Redirect("Index.aspx");
             }
             else
             {
-                LoginOutcome.Text = "Invalid Login Credentials";
+                //Remain on same page
+                LoginOutcome.Text = "Incorrect Email or Password";
             }
         }
     }
