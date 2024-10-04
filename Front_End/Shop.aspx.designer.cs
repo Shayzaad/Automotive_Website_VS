@@ -11,25 +11,16 @@ namespace Front_End
 {
 
 
-    public partial class Index
+    public partial class Shop
     {
 
         /// <summary>
-        /// DisProd control.
+        /// Prods control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DisProd;
-
-        /// <summary>
-        /// DiscountProd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DiscountProd;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Prods;
     }
 }

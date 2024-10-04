@@ -24,7 +24,7 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Exquisite Parts</h1>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Engineered for Excellence, Priced for You!</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Shop Now</a>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="Shop.aspx?Save=2">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -35,9 +35,9 @@
                 <div class="product-offer mb-30" style="height: 430px;">
                     <img class="img-fluid" src="https://p4.wallpaperbetter.com/wallpaper/121/366/464/air-bel-chevrolet-drag-wallpaper-preview.jpg" alt="">
                     <div class="offer-text">
-                        <h6 class="text-white text-uppercase">Save Big</h6>
-                        <h3 class="text-white mb-3">Price Slash</h3>
-                        <a href="" class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp">Shop Now</a>
+                        <h6 class="text-white text-uppercase">Price Slashed Performance</h6>
+                        <h3 class="text-white mb-3">Up To 50% Off</h3>
+                        <a href="Shop.aspx?Save=1" class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -193,231 +193,25 @@
     <div class="container-fluid pt-5 pb-3" >
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Featured Products</span></h2>
         <div class="row px-xl-5" id="DisProd" runat="server">
-      <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="https://th.bing.com/th/id/OIP.ohkYOI_6AaQPnJXXhRDvVwAAAA?rs=1&pid=ImgDetMain" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Brake Pads</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>R310.76</h5><h6 class="text-muted ml-2"><del>R310.76</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="https://th.bing.com/th/id/OIP.rJnc_eEIj7ECH1vk5YikgQHaHa?rs=1&pid=ImgDetMain" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Coilovers</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>R4,999.00</h5><h6 class="text-muted ml-2"><del>R4,999.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="https://www.kaneriautoparts.com/wp-content/uploads/2020/12/break-disk-1.png" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Brake disc</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>R930.33</h5><h6 class="text-muted ml-2"><del>R930.33</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="https://www.trailerandtruckparts.com/cdn-cgi/image/quality%3D85/assets/images/sendel_t07_blackmach_6.png" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Wheel Rim(</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>R1,576.00</h5><h6 class="text-muted ml-2"><del>R1,576.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="https://microless.com/cdn/products/7626ee3f49b74278cac552934334fec7-hi.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Steering wheel cover</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>R180.00</h5><h6 class="text-muted ml-2"><del>R180.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="https://sx-trailers.myshopify.com/cdn/shop/products/Front_Steer_5d727899-aa0e-4f19-a2ec-24725581bedf_grande.png?v=1517970302" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Brake drum</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>R570.60</h5><h6 class="text-muted ml-2"><del>R570.60</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="https://i5.walmartimages.com/seo/Manual-Pedal-Cover-Red-Nonslip-Car-Pedal-Pads-Petrol-Clutch-Brake-Pad-Cover-Foot-Pedals-Rest-Plate-Pack-of-3_439d8d1f-25e4-43b1-b85f-066edb0e6b9b.b7b37a21ddbafadf3faff22daf282fc5.png" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Pedal Covers</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>R118.00</h5><h6 class="text-muted ml-2"><del>R118.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="https://i5.walmartimages.com/seo/Auto-Drive-4PC-Rubber-Floor-Mats-Metallic-Plate-Red-Universal-Fit_3b57cb8f-106c-438c-9052-715357941530.aebbdb61a73128b4b279e8cb39c2c915.png" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Car interior floor mats</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>R330.00</h5><h6 class="text-muted ml-2"><del>R330.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <%--Dynamically populate featured products--%>
         </div>
+
+       <%-- Go to the shop page--%>
+       <a href="Shop.aspx?Save=2"
+           style="display: inline-block; padding: 12px 30px; background-color: #f1c40f; color: black; text-align: center; text-decoration: none; border-radius: 25px; border: 2px solid #e1b307; font-size: 18px; font-weight: bold; cursor: pointer; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; margin: 20px auto; display: block; width: fit-content;"
+           onmouseover="this.style.backgroundColor='#e1b307'; this.style.boxShadow='0px 6px 12px rgba(0, 0, 0, 0.3)';"
+           onmouseout="this.style.backgroundColor='#f1c40f'; this.style.boxShadow='0px 4px 8px rgba(0, 0, 0, 0.2)';">
+           View More
+        </a>
     </div>
     <!-- Products End -->
 
+
     <!-- Products Start -->
     <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Recent Products</span></h2>
-        <div class="row px-xl-5">
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Discounted Products</span></h2>
+        <div class="row px-xl-5" id="DiscountProd" runat="server">
+            <%--<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-100" src="https://www.autocapeacc.co.za/wp-content/uploads/2021/07/NP2.png" alt="">
@@ -444,6 +238,8 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
@@ -632,8 +428,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--%>
         </div>
+        <%-- Go to the shop page (Discounted)--%>
+       <a href="Shop.aspx?Save=1"
+           style="display: inline-block; padding: 12px 30px; background-color: #f1c40f; color: black; text-align: center; text-decoration: none; border-radius: 25px; border: 2px solid #e1b307; font-size: 18px; font-weight: bold; cursor: pointer; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; margin: 20px auto; display: block; width: fit-content;"
+           onmouseover="this.style.backgroundColor='#e1b307'; this.style.boxShadow='0px 6px 12px rgba(0, 0, 0, 0.3)';"
+           onmouseout="this.style.backgroundColor='#f1c40f'; this.style.boxShadow='0px 4px 8px rgba(0, 0, 0, 0.2)';">
+           View More
+        </a>
     </div>
     <!-- Products End -->
 
@@ -672,4 +475,10 @@
         </div>
     </div>
     <!-- Vendor End -->--%>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 </asp:Content>
