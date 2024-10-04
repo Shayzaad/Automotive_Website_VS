@@ -14,28 +14,19 @@ namespace Back_End
         DataClasses1DataContext db = new DataClasses1DataContext();
         //Function used to check login details in database
         //Either denies or allows user access
-        //Customer = 0
-        //Manager = 1
-        public int Login(string Email, string Password)
+        public bool Login(string Email, string Password)
         {
-            var user = (from u in db.Customer1s
-                        where u.Email.Equals(Email) && u.Pass.Equals(Password)
-                        select u).FirstOrDefault();
+            var cu = (from c in db.Customer1s
+                      where c.Email.Equals(Email) && c.Pass.Equals(Password)
+                      select c).FirstOrDefault();
 
-            //0 - Customer
-            if (user != null && user.UserType.Equals("Customer"))
+            if (cu != null)
             {
-                return 0;
+                return true;
             }
-            //1 - Manager
-            else if (user != null && user.UserType.Equals("Manager"))
-            {
-                return 1;
-            }
-            //2 - Error
             else
             {
-                return 2;
+                return false;
             }
         }
 
@@ -55,8 +46,7 @@ namespace Back_End
             {
                 UserName = Username,
                 Email = Email,
-                Pass = Password,
-                UserType = "Customer"
+                Pass = Password
             };
 
             db.Customer1s.InsertOnSubmit(Customer);
@@ -115,30 +105,7 @@ namespace Back_End
                 return null;
             }
         }
-
-        public Customer1 GetUserByEmail(string email)
-        {
-            var user = (from u in db.Customer1s
-                        where u.Email == email
-                        select u).FirstOrDefault();
-
-            if (user != null)
-            {
-                var objUser = new Customer1();
-                objUser.CustomerID = user.CustomerID;
-                objUser.UserName = user.UserName;
-                objUser.Email = user.Email;
-                objUser.UserType = user.UserType;
-
-                return objUser;
-            }
-            else
-            {
-                return null;
-            }
-        }
     }
-
     public class ProductDTO
     {
         public int ProductID { get; set; } // Unique identifier for the product

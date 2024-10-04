@@ -1517,10 +1517,10 @@ namespace Front_End.ServiceReference1 {
         System.Threading.Tasks.Task<bool> RegisterAsync(string Username, string Email, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
-        int Login(string Email, string Password);
+        bool Login(string Email, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
-        System.Threading.Tasks.Task<int> LoginAsync(string Email, string Password);
+        System.Threading.Tasks.Task<bool> LoginAsync(string Email, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProducts", ReplyAction="http://tempuri.org/IService1/GetProductsResponse")]
         Front_End.ServiceReference1.ProductDTO[] GetProducts();
@@ -1533,12 +1533,6 @@ namespace Front_End.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProduct", ReplyAction="http://tempuri.org/IService1/GetProductResponse")]
         System.Threading.Tasks.Task<Front_End.ServiceReference1.Product> GetProductAsync(int ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserByEmail", ReplyAction="http://tempuri.org/IService1/GetUserByEmailResponse")]
-        Front_End.ServiceReference1.Customer1 GetUserByEmail(string email);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserByEmail", ReplyAction="http://tempuri.org/IService1/GetUserByEmailResponse")]
-        System.Threading.Tasks.Task<Front_End.ServiceReference1.Customer1> GetUserByEmailAsync(string email);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1576,11 +1570,11 @@ namespace Front_End.ServiceReference1 {
             return base.Channel.RegisterAsync(Username, Email, Password);
         }
         
-        public int Login(string Email, string Password) {
+        public bool Login(string Email, string Password) {
             return base.Channel.Login(Email, Password);
         }
         
-        public System.Threading.Tasks.Task<int> LoginAsync(string Email, string Password) {
+        public System.Threading.Tasks.Task<bool> LoginAsync(string Email, string Password) {
             return base.Channel.LoginAsync(Email, Password);
         }
         
@@ -1598,14 +1592,6 @@ namespace Front_End.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Front_End.ServiceReference1.Product> GetProductAsync(int ID) {
             return base.Channel.GetProductAsync(ID);
-        }
-        
-        public Front_End.ServiceReference1.Customer1 GetUserByEmail(string email) {
-            return base.Channel.GetUserByEmail(email);
-        }
-        
-        public System.Threading.Tasks.Task<Front_End.ServiceReference1.Customer1> GetUserByEmailAsync(string email) {
-            return base.Channel.GetUserByEmailAsync(email);
         }
     }
 }

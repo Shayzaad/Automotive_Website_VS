@@ -15,15 +15,12 @@ namespace Back_End
         bool Register(string Username, string Email, string Password);
 
         [OperationContract]
-        int Login(string Email, string Password);
+        bool Login(string Email, string Password);
 
         [OperationContract]
         List<ProductDTO> GetProducts();
 
         [OperationContract]
         Product GetProduct(int ID);
-
-        [OperationContract]
-        Customer1 GetUserByEmail(string email);
     }
 }
