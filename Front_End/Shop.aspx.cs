@@ -12,113 +12,72 @@ namespace Front_End
     public partial class Shop : System.Web.UI.Page
     {
         Service1Client SC = new Service1Client();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             int Save = Convert.ToInt32(Request.QueryString["Save"].ToString());
 
-            //Discounted
-            if(Save == 1)
+            // Discounted
+            if (Save == 1)
             {
-                try
-                {
-                    dynamic product = SC.GetProducts();
-                    StringBuilder sb = new StringBuilder();
-                    if (product != null)
-                    {
-                        foreach (ProductDTO p in product)
-                        {
-                            if(p.DiscountedPrice != null)
-                            {
-                                sb.Append("<div class='col-lg-4 col-md-6 col-sm-6 pb-1'>");
-                                sb.Append("<div class='product-item bg-light mb-4'>");
-                                sb.Append("<div class='product-img position-relative overflow-hidden'>");
-                                sb.Append("<img class='img-fluid w-100' src=" + p.Image + " alt=''>");
-                                sb.Append("<div class='product-action'>");
-                                sb.Append("<a class='btn btn-outline-dark btn-square' href=''><i class='fa fa-shopping-cart'></i></a>");
-                                sb.Append("<a class='btn btn-outline-dark btn-square' href=''><i class='far fa-heart'></i></a>");
-                                sb.Append("</div>");
-                                sb.Append("</div>");
-                                sb.Append("<div class='text-center py-4'>");
-                                sb.Append("<a class='h6 text-decoration-none text-truncate' href=''>" + p.Name + "</a>");
-                                sb.Append("<div class='d-flex align-items-center justify-content-center mt-2'>");
-                                sb.Append("<h5>" + p.DiscountedPrice + "</h5><h6 class='text-muted ml-2'><del>" + p.Price + "</del></h6>");
-                                sb.Append("</div>");
-                                //sb.Append("<div class='d-flex align-items-center justify-content-center mb-1'>");
-                                //sb.Append("<small class='fa fa-star text-primary mr-1'></small>");
-                                //sb.Append("<small class='fa fa-star text-primary mr-1'></small>");
-                                //sb.Append("<small class='fa fa-star text-primary mr-1'></small>");
-                                //sb.Append("<small class='fa fa-star text-primary mr-1'></small>");
-                                //sb.Append("<small class='fa fa-star text-primary mr-1'></small>");
-                                //sb.Append("<small>(99)</small>");
-                                //sb.Append("</div>");
-                                sb.Append("</div>");
-                                sb.Append("</div>");
-                                sb.Append("</div>");
-                            }
-                        }
-                        Prods.InnerHtml = sb.ToString();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Log the exception or show an error message
-                    Response.Write($"An error occurred: {ex.Message}");
-                }
+                LoadProducts(true);
                 return;
             }
 
-
-            //Non Discounted
-            else if(Save == 2)
+            // Non Discounted
+            else if (Save == 2)
             {
-                try
-                {
-                    dynamic product = SC.GetProducts();
-                    StringBuilder sb = new StringBuilder();
-                    if (product != null)
-                    {
-                        foreach (ProductDTO p in product)
-                        {
-                            if(p.DiscountedPrice == null)
-                            {
-                                sb.Append("<div class='col-lg-4 col-md-6 col-sm-6 pb-1'>");
-                                sb.Append("<div class='product-item bg-light mb-4'>");
-                                sb.Append("<div class='product-img position-relative overflow-hidden'>");
-                                sb.Append("<img class='img-fluid w-100' src=" + p.Image + " alt=''>");
-                                sb.Append("<div class='product-action'>");
-                                sb.Append("<a class='btn btn-outline-dark btn-square' href=''><i class='fa fa-shopping-cart'></i></a>");
-                                sb.Append("<a class='btn btn-outline-dark btn-square' href=''><i class='far fa-heart'></i></a>");
-                                sb.Append("</div>");
-                                sb.Append("</div>");
-                                sb.Append("<div class='text-center py-4'>");
-                                sb.Append("<a class='h6 text-decoration-none text-truncate' href=''>" + p.Name + "</a>");
-                                sb.Append("<div class='d-flex align-items-center justify-content-center mt-2'>");
-                                sb.Append("<h5>" + p.Price + "</h5>");
-                                sb.Append("</div>");
-                                //sb.Append("<div class='d-flex align-items-center justify-content-center mb-1'>");
-                                //sb.Append("<small class='fa fa-star text-primary mr-1'></small>");
-                                //sb.Append("<small class='fa fa-star text-primary mr-1'></small>");
-                                //sb.Append("<small class='fa fa-star text-primary mr-1'></small>");
-                                //sb.Append("<small class='fa fa-star text-primary mr-1'></small>");
-                                //sb.Append("<small class='fa fa-star text-primary mr-1'></small>");
-                                //sb.Append("<small>(99)</small>");
-                                //sb.Append("</div>");
-                                sb.Append("</div>");
-                                sb.Append("</div>");
-                                sb.Append("</div>");
-                            }
-
-                        }
-
-                        Prods.InnerHtml = sb.ToString();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Log the exception or show an error message
-                    Response.Write($"An error occurred: {ex.Message}");
-                }
+                LoadProducts(false);
             }
         }
+
+        private void LoadProducts(bool isDiscounted)
+        {
+            try
+            {
+                dynamic product = SC.GetProducts();
+                StringBuilder sb = new StringBuilder();
+                if (product != null)
+                {
+                    foreach (ProductDTO p in product)
+                    {
+                        if ((isDiscounted && p.DiscountedPrice != null) || (!isDiscounted && p.DiscountedPrice == null))
+                        {
+                            sb.Append("<div class='col-lg-4 col-md-6 col-sm-6 pb-1'>");
+                            sb.Append("<div class='product-item bg-light mb-4'>");
+                            sb.Append("<div class='product-img position-relative overflow-hidden'>");
+                            sb.Append($"<a href='AboutProduct.aspx?ID={p.ProductID}'><img class='img-fluid w-100' src='{p.Image}' alt=''></a>");
+                            sb.Append("<div class='product-action'>");
+                            sb.Append("<a class='btn btn-outline-dark btn-square' href=''><i class='fa fa-shopping-cart'></i></a>");
+                            sb.Append("<a class='btn btn-outline-dark btn-square' href=''><i class='far fa-heart'></i></a>");
+                            sb.Append("</div>");
+                            sb.Append("</div>");
+                            sb.Append("<div class='text-center py-4'>");
+                            sb.Append($"<a class='h6 text-decoration-none text-truncate' href='AboutProduct.aspx?ID={p.ProductID}'>{p.Name}</a>");
+                            sb.Append("<div class='d-flex align-items-center justify-content-center mt-2'>");
+                            if (p.DiscountedPrice != null)
+                            {
+                                sb.Append($"<h5>R{p.DiscountedPrice}</h5><h6 class='text-muted ml-2'><del>R{p.Price}</del></h6>");
+                            }
+                            else
+                            {
+                                sb.Append($"<h5>R{p.Price}</h5>");
+                            }
+                            sb.Append("</div>");
+                            sb.Append("</div>");
+                            sb.Append("</div>");
+                            sb.Append("</div>");
+                        }
+                    }
+                    Prods.InnerHtml = sb.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or show an error message
+                Response.Write($"An error occurred: {ex.Message}");
+            }
+        }
+
     }
 }
