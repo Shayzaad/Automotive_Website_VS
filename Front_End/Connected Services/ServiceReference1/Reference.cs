@@ -1539,6 +1539,12 @@ namespace Front_End.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserByEmail", ReplyAction="http://tempuri.org/IService1/GetUserByEmailResponse")]
         System.Threading.Tasks.Task<Front_End.ServiceReference1.Customer1> GetUserByEmailAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductDTO", ReplyAction="http://tempuri.org/IService1/GetProductDTOResponse")]
+        Front_End.ServiceReference1.ProductDTO GetProductDTO(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductDTO", ReplyAction="http://tempuri.org/IService1/GetProductDTOResponse")]
+        System.Threading.Tasks.Task<Front_End.ServiceReference1.ProductDTO> GetProductDTOAsync(int ID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1606,6 +1612,14 @@ namespace Front_End.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Front_End.ServiceReference1.Customer1> GetUserByEmailAsync(string email) {
             return base.Channel.GetUserByEmailAsync(email);
+        }
+        
+        public Front_End.ServiceReference1.ProductDTO GetProductDTO(int ID) {
+            return base.Channel.GetProductDTO(ID);
+        }
+        
+        public System.Threading.Tasks.Task<Front_End.ServiceReference1.ProductDTO> GetProductDTOAsync(int ID) {
+            return base.Channel.GetProductDTOAsync(ID);
         }
     }
 }
