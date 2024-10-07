@@ -27,6 +27,6 @@ namespace Back_End
         Customer1 GetUserByEmail(string email);
 
         [OperationContract]
-        ProductDTO GetProductDTO(int ID);
+        List<ProductDTO> GetProductByCategory(int CatID);
     }
 }

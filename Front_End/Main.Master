@@ -51,8 +51,8 @@
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="./Login.aspx"><button class="dropdown-item" type="button">Sign in</button></a>
-                                    <a href="./Register.aspx"><button class="dropdown-item" type="button">Sign up</button></a>
+                                    <a href="Login.aspx"><button class="dropdown-item" type="button">Sign in</button></a>
+                                    <a href="Register.aspx"><button class="dropdown-item" type="button">Sign up</button></a>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                                 <i class="fas fa-heart text-dark"></i>
                                 <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>--%>
-                            <a href="" class="btn px-0 ml-2">
+                            <a href="Cart.aspx" class="btn px-0 ml-2">
                                 <i class="fas fa-shopping-cart text-dark"></i>
                                 <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
                     <div class="col-lg-4">
-                        <a href="./Index.aspx" class="text-decoration-none">
+                        <a href="Index.aspx" class="text-decoration-none">
                             <img src="./img/Screenshot 2024-08-04 225828.png" width="73%" height: "10px"/> 
                         </a>
                     </div>
@@ -113,14 +113,14 @@
                                         <a href="" class="dropdown-item">Baby's Dresses</a>
                                     </div>--%>
                                 </div>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Braking System</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Suspension and Steering</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Interior</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Exterior</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Wheel/Rim</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Engine Components</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Filters</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Tires</a>
+                                <a href="Shop.aspx?Category=1" class="nav-item nav-link">Braking System</a>
+                                <a href="Shop.aspx?Category=2" class="nav-item nav-link">Suspension and Steering</a>
+                                <a href="Shop.aspx?Category=3" class="nav-item nav-link">Interior</a>
+                                <a href="Shop.aspx?Category=4" class="nav-item nav-link">Exterior</a>
+                                <a href="Shop.aspx?Category=5" class="nav-item nav-link">Engine Components</a>
+                                <a href="Shop.aspx?Category=6" class="nav-item nav-link">Filters</a>
+                                <a href="Shop.aspx?Category=7" class="nav-item nav-link">Wheel/Rim</a>
+                                <a href="Shop.aspx?Category=8" class="nav-item nav-link">Tires</a>
                             </div>
                         </nav>
                     </div>
@@ -135,18 +135,18 @@
                             </button>
                             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                                 <div class="navbar-nav mr-auto py-0">
-                                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                                    <a href="shop.html" class="nav-item nav-link">Shop</a>
+                                    <a href="Index.aspx" class="nav-item nav-link active">Home</a>
+                                    <a href="Shop.aspx" class="nav-item nav-link">Shop</a>
                                     <div class="nav-item dropdown">
                                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages<i class="fa fa-angle-down mt-1"></i></a>
                                         <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                            <a href="./Shop.aspx" class="dropdown-item">Shop</a>
-                                            <a href="./Cart.aspx" class="dropdown-item">Shopping Cart</a>
+                                            <a href="Shop.aspx" class="dropdown-item">Shop</a>
+                                            <a href="Cart.aspx" class="dropdown-item">Shopping Cart</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                                    <a href="" class="btn px-0 ml-3">
+                                    <a href="Cart.aspx" class="btn px-0 ml-3">
                                         <i class="fas fa-shopping-cart text-primary"></i>
                                         <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                                     </a>
@@ -170,8 +170,8 @@
                 <div class="row bg-secondary py-1 px-xl-5">
                     <div class="col-lg-6 d-none d-lg-block">
                          <div class="d-inline-flex align-items-center h-100">
-                            <a class="text-body mr-3" href="./Reviews.aspx">My Reviews</a>
-                            <a class="text-body mr-3" href="./Invoices.aspx">Invoices</a>
+                            <a class="text-body mr-3" href="Reviews.aspx">My Reviews</a>
+                            <a class="text-body mr-3" href="Invoices.aspx">Invoices</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center text-lg-right">
@@ -179,7 +179,7 @@
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="./Logout.aspx"><button class="dropdown-item" type="button">Logout</button></a>
+                                    <a href="Logout.aspx"><button class="dropdown-item" type="button">Logout</button></a>
                                 </div>
                             </div>
                         </div>
@@ -188,7 +188,7 @@
                                 <i class="fas fa-heart text-dark"></i>
                                 <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>--%>
-                            <a href="" class="btn px-0 ml-2">
+                            <a href="Cart.aspx" class="btn px-0 ml-2">
                                 <i class="fas fa-shopping-cart text-dark"></i>
                                 <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
@@ -197,7 +197,7 @@
                 </div>
                 <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
                     <div class="col-lg-4">
-                        <a href="./Index.aspx" class="text-decoration-none">
+                        <a href="Index.aspx" class="text-decoration-none">
                             <img src="./img/Screenshot 2024-08-04 225828.png" width="73%" height: "10px"/> 
                         </a>
                     </div>
@@ -240,14 +240,14 @@
                                         <a href="" class="dropdown-item">Baby's Dresses</a>
                                     </div>--%>
                                 </div>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Braking System</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Suspension and Steering</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Interior</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Exterior</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Wheel/Rim</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Engine Components</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Filters</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Tires</a>
+                                <a href="Shop.aspx?Category=1" class="nav-item nav-link">Braking System</a>
+                                <a href="Shop.aspx?Category=2" class="nav-item nav-link">Suspension and Steering</a>
+                                <a href="Shop.aspx?Category=3" class="nav-item nav-link">Interior</a>
+                                <a href="Shop.aspx?Category=4" class="nav-item nav-link">Exterior</a>
+                                <a href="Shop.aspx?Category=5" class="nav-item nav-link">Engine Components</a>
+                                <a href="Shop.aspx?Category=6" class="nav-item nav-link">Filters</a>
+                                <a href="Shop.aspx?Category=7" class="nav-item nav-link">Wheel/Rim</a>
+                                <a href="Shop.aspx?Category=8" class="nav-item nav-link">Tires</a>
                             </div>
                         </nav>
                     </div>
@@ -262,25 +262,25 @@
                             </button>
                             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                                 <div class="navbar-nav mr-auto py-0">
-                                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                                    <a href="shop.html" class="nav-item nav-link">Shop</a>
+                                    <a href="Index.aspx" class="nav-item nav-link active">Home</a>
+                                    <a href="Shop.aspx" class="nav-item nav-link">Shop</a>
                                     <div class="nav-item dropdown">
                                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages<i class="fa fa-angle-down mt-1"></i></a>
                                         <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                            <a href="./Shop.aspx" class="dropdown-item">Shop</a>
-                                            <a href="./Cart.aspx" class="dropdown-item">Shopping Cart</a>
-                                            <a href="./Wishlist.aspx" class="dropdown-item">Wishlist</a>
-                                            <a href="./Invoices.aspx" class="dropdown-item">Invoices</a>
-                                            <a href="./Reviews.aspx" class="dropdown-item">My Reviews</a>
+                                            <a href="Shop.aspx" class="dropdown-item">Shop</a>
+                                            <a href="Cart.aspx" class="dropdown-item">Shopping Cart</a>
+                                            <a href="Wishlist.aspx" class="dropdown-item">Wishlist</a>
+                                            <a href="Invoices.aspx" class="dropdown-item">Invoices</a>
+                                            <a href="Reviews.aspx" class="dropdown-item">My Reviews</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                                    <a href="" class="btn px-0">
+                                    <a href="Wishlist.aspx" class="btn px-0">
                                         <i class="fas fa-heart text-primary"></i>
                                         <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                                     </a>
-                                    <a href="" class="btn px-0 ml-3">
+                                    <a href="Cart.aspx" class="btn px-0 ml-3">
                                         <i class="fas fa-shopping-cart text-primary"></i>
                                         <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                                     </a>
@@ -304,7 +304,7 @@
                 <div class="row bg-secondary py-1 px-xl-5">
                     <div class="col-lg-6 d-none d-lg-block">
                          <div class="d-inline-flex align-items-center h-100">
-                            <a class="text-body mr-3" href="./RegisterMan.aspx">Register Manager</a>
+                            <a class="text-body mr-3" href="RegisterMan.aspx">Register Manager</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center text-lg-right">
@@ -312,7 +312,7 @@
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="./Logout.aspx"><button class="dropdown-item" type="button">Logout</button></a>
+                                    <a href="Logout.aspx"><button class="dropdown-item" type="button">Logout</button></a>
                                 </div>
                             </div>
                         </div>
@@ -321,7 +321,7 @@
                                 <i class="fas fa-heart text-dark"></i>
                                 <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>--%>
-                            <a href="" class="btn px-0 ml-2">
+                            <a href="Cart.aspx" class="btn px-0 ml-2">
                                 <i class="fas fa-shopping-cart text-dark"></i>
                                 <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
@@ -330,7 +330,7 @@
                 </div>
                 <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
                     <div class="col-lg-4">
-                        <a href="./Index.aspx" class="text-decoration-none">
+                        <a href="Index.aspx" class="text-decoration-none">
                             <img src="./img/Screenshot 2024-08-04 225828.png" width="73%" height: "10px"/> 
                         </a>
                     </div>
@@ -373,14 +373,14 @@
                                         <a href="" class="dropdown-item">Baby's Dresses</a>
                                     </div>--%>
                                 </div>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Braking System</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Suspension and Steering</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Interior</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Exterior</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Wheel/Rim</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Engine Components</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Filters</a>
-                                <a href="./Shop.aspx" class="nav-item nav-link">Tires</a>
+                                <a href="Shop.aspx?Category=1" class="nav-item nav-link">Braking System</a>
+                                <a href="Shop.aspx?Category=2" class="nav-item nav-link">Suspension and Steering</a>
+                                <a href="Shop.aspx?Category=3" class="nav-item nav-link">Interior</a>
+                                <a href="Shop.aspx?Category=4" class="nav-item nav-link">Exterior</a>
+                                <a href="Shop.aspx?Category=5" class="nav-item nav-link">Engine Components</a>
+                                <a href="Shop.aspx?Category=6" class="nav-item nav-link">Filters</a>
+                                <a href="Shop.aspx?Category=7" class="nav-item nav-link">Wheel/Rim</a>
+                                <a href="Shop.aspx?Category=8" class="nav-item nav-link">Tires</a>
                             </div>
                         </nav>
                     </div>
@@ -395,25 +395,25 @@
                             </button>
                             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                                 <div class="navbar-nav mr-auto py-0">
-                                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                                    <a href="shop.html" class="nav-item nav-link">Shop</a>
+                                    <a href="Index.aspx" class="nav-item nav-link active">Home</a>
+                                    <a href="Shop.aspx" class="nav-item nav-link">Shop</a>
                                     <div class="nav-item dropdown">
                                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages<i class="fa fa-angle-down mt-1"></i></a>
                                         <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                            <a href="./Shop.aspx" class="dropdown-item">Shop</a>
-                                            <a href="./EditProduct.aspx" class="dropdown-item">Edit Product</a>
-                                             <a href="./RegisterMan.aspx" class="dropdown-item">Register Manager</a>
+                                            <a href="Shop.aspx" class="dropdown-item">Shop</a>
+                                            <a href="ManageProducts.aspx" class="dropdown-item">Manage Products</a>
+                                             <a href="RegisterMan.aspx" class="dropdown-item">Register Manager</a>
                                         </div>
                                     </div>
                                 </div>
                                <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                                    <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                                    <a href="./EditProduct.aspx" 
+                                    <a href="ManageProducts.aspx" 
                                        class="dropdown-item" 
                                        style="color: white; background-color: transparent;" 
                                        onmouseover="this.style.color='yellow'; this.style.backgroundColor='transparent';" 
                                        onmouseout="this.style.color='white'; this.style.backgroundColor='transparent';">
-                                       Edit Product
+                                       Manage Product
                                     </a>
                                 </div>
 
@@ -435,50 +435,52 @@
                 <div class="row px-xl-5 pt-5">
                     <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                         <h5 class="text-secondary text-uppercase mb-4">Get In Touch</h5>
-                        <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor. Rebum tempor no vero est magna amet no</p>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>                        
+                        <p class="mb-4">Kallan SS, 222178219</p>
+                        <p class="mb-4">Fakir Y, 222114205</p>
+                        <p class="mb-4">Moyo CT, 221039267</p>
+                        <p class="mb-4">Musakanda T, 221033166</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>University Of Johannesburg, Auckland Park</p>                        
                     </div>
                     <div class="col-lg-8 col-md-12">
                         <div class="row">
                             <div class="col-md-4 mb-5">
                                 <h5 class="text-secondary text-uppercase mb-4">Quick Shop</h5>
                                 <div class="d-flex flex-column justify-content-start">
-                                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                                    <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                                    <a class="text-secondary mb-2" href="Index.aspx"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                                    <a class="text-secondary mb-2" href="Shop.aspx"><i class="fa fa-angle-right mr-2"></i>Shop</a>
                                 </div>
                             </div>
                             <div class="col-md-4 mb-5">
-                                <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
-                                <div class="d-flex flex-column justify-content-start">
-                                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                                    <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                                </div>
+                                <h5 class="text-secondary text-uppercase mb-4">OUR TRACK-ERS</h5>
+                                <img src="https://i.cdn.newsbytesapp.com/images/l87820230422173524.jpeg" alt="Track Car" class="img-fluid" style="width: 300px; height: 150px;">
+                                <img src="https://th.bing.com/th/id/R.b8a98778c6eaa48cf392646b007aa3cc?rik=TH%2feBm9nTplcqQ&riu=http%3a%2f%2fwww.wallpaperbetter.com%2fwallpaper%2f739%2f542%2f483%2fnurburgring-race-track-lexus-lfa-race-car-hd-1080P-wallpaper.jpg&ehk=v%2fQndhCkxZ2Z2uJJMf%2fegGIkk0O53595YPDa0A8Jpvg%3d&risl=&pid=ImgRaw&r=0" alt="Track Car" class="img-fluid" style="width: 300px; height: 150px;">
                             </div>
+
                             <div class="col-md-4 mb-5">
+                                <h5 class="text-secondary text-uppercase mb-4">OUR DRAG-ERS</h5>
+                                <img src="https://th.bing.com/th/id/R.b791f935a0337a8e57dca95326ae5e8c?rik=27sdDIn6%2bPRKZg&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fgzCwg09.jpg&ehk=yCN4tIiDHjal%2fie6g808ZVuK7GsnwIXEXmlOpj0OA9w%3d&risl=&pid=ImgRaw&r=0" alt="Track Car" class="img-fluid" style="width: 300px; height: 150px;">
+                                <img src="https://images6.alphacoders.com/307/thumb-1920-307836.jpg" alt="Track Car" class="img-fluid" style="width: 300px; height: 150px;">
+                            </div>
+
+                          <%--  <div class="col-md-4 mb-5">
                                 <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
-                                <p>Duo stet tempor ipsum sit amet magna ipsum tempor est</p>
+                                <p>Get the latest deals, news and new arrivals first hand</p>
                                 <form action="">
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Your Email Address">
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary">Sign Up</button>
+                                            <a href="Home.aspx" class="btn btn-primary">Sign Up</a>
                                         </div>
                                     </div>
                                 </form>
                                 <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
                                 <div class="d-flex">
-                                    <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-primary btn-square mr-2" href="Home.aspx"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-primary btn-square mr-2" href="Home.aspx"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-primary btn-square mr-2" href="Home.aspx"><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-primary btn-square" href="Home.aspx"><i class="fab fa-instagram"></i></a>
                                 </div>
-                            </div>
+                            </div>--%>
                         </div>
                     </div>
                 </div>

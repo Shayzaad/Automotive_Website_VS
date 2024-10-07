@@ -166,6 +166,40 @@ namespace Back_End
                 return null;
             }
         }
+
+        public List<ProductDTO> GetProductByCategory(int CatID)
+        {
+            List<ProductDTO> productList = new List<ProductDTO>();
+
+            dynamic products = db.Products.ToList();
+
+            if (products != null && products.Count > 0)
+            {
+                foreach (dynamic product in products)
+                {
+                    if (product.CategoryID == CatID)
+                    {
+                        ProductDTO productDto = new ProductDTO
+                        {
+                            ProductID = product.ProductID,
+                            CategoryID = product.CategoryID,
+                            Name = product.Name,
+                            Image = product.Image,
+                            Price = product.Price,
+                            DiscountedPrice = product.DiscountedPrice,
+                            Description = product.Description,
+                            Rating = product.Rating,
+                            StockQuantity = product.StockQuantity
+                        };
+
+                        productList.Add(productDto);
+                    }
+                }
+            }
+
+            return productList;
+        }
+
     }
 
     public class ProductDTO

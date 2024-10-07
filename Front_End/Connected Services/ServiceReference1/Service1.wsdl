@@ -37,11 +37,11 @@
   <wsdl:message name="IService1_GetUserByEmail_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUserByEmailResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetProductDTO_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetProductDTO" />
+  <wsdl:message name="IService1_GetProductByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByCategory" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetProductDTO_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetProductDTOResponse" />
+  <wsdl:message name="IService1_GetProductByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByCategoryResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="Register">
@@ -64,9 +64,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserByEmail" message="tns:IService1_GetUserByEmail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUserByEmailResponse" message="tns:IService1_GetUserByEmail_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetProductDTO">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetProductDTO" message="tns:IService1_GetProductDTO_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetProductDTOResponse" message="tns:IService1_GetProductDTO_OutputMessage" />
+    <wsdl:operation name="GetProductByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetProductByCategory" message="tns:IService1_GetProductByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetProductByCategoryResponse" message="tns:IService1_GetProductByCategory_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -116,8 +116,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetProductDTO">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetProductDTO" style="document" />
+    <wsdl:operation name="GetProductByCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetProductByCategory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
