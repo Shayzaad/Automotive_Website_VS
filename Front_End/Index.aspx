@@ -82,110 +82,103 @@
     <div class="container-fluid pt-5">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
         <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Brakes.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Braking System</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+           <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=1">
+        <div class="cat-item d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Brakes.png" alt="">
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Suspension_Steering.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Suspension and Steering</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+            <div class="flex-fill pl-3">
+                <h6>Braking System</h6>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Interior.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Interior</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=2">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Suspension_Steering.png" alt="">
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Exterior.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Exterior</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+            <div class="flex-fill pl-3">
+                <h6>Suspension and Steering</h6>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Wheel_Tire.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Wheel/Rim</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=3">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Interior.png" alt="">
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Engine.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Engine Components</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+            <div class="flex-fill pl-3">
+                <h6>Interior</h6>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Oil_Filter.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Filters</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=4">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Exterior.png" alt="">
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Tyre.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Tires</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+            <div class="flex-fill pl-3">
+                <h6>Exterior</h6>
             </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=7">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Wheel_Tire.png" alt="">
+            </div>
+            <div class="flex-fill pl-3">
+                <h6>Wheel/Rim</h6>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=5">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Engine.png" alt="">
+            </div>
+            <div class="flex-fill pl-3">
+                <h6>Engine Components</h6>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=6">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Oil_Filter.png" alt="">
+            </div>
+            <div class="flex-fill pl-3">
+                <h6>Filters</h6>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=8">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Tyre.png" alt="">
+            </div>
+            <div class="flex-fill pl-3">
+                <h6>Tires</h6>
+            </div>
+        </div>
+    </a>
+</div>
+
     <!-- Categories End -->
 
 
@@ -478,7 +471,7 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-     <!-- Carousel Start -->
+      <!-- Carousel Start -->
     <div class="container-fluid mb-3">
         <div class="row px-xl-5">
             <div class="col-lg-8">
@@ -556,110 +549,103 @@
     <div class="container-fluid pt-5">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
         <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Brakes.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Braking System</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+           <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=1">
+        <div class="cat-item d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Brakes.png" alt="">
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Suspension_Steering.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Suspension and Steering</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+            <div class="flex-fill pl-3">
+                <h6>Braking System</h6>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Interior.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Interior</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=2">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Suspension_Steering.png" alt="">
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Exterior.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Exterior</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+            <div class="flex-fill pl-3">
+                <h6>Suspension and Steering</h6>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Wheel_Tire.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Wheel/Rim</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=3">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Interior.png" alt="">
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Engine.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Engine Components</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+            <div class="flex-fill pl-3">
+                <h6>Interior</h6>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Oil_Filter.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Filters</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=4">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Exterior.png" alt="">
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Tyre.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Tires</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+            <div class="flex-fill pl-3">
+                <h6>Exterior</h6>
             </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=7">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Wheel_Tire.png" alt="">
+            </div>
+            <div class="flex-fill pl-3">
+                <h6>Wheel/Rim</h6>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=5">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Engine.png" alt="">
+            </div>
+            <div class="flex-fill pl-3">
+                <h6>Engine Components</h6>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=6">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Oil_Filter.png" alt="">
+            </div>
+            <div class="flex-fill pl-3">
+                <h6>Filters</h6>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=8">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Tyre.png" alt="">
+            </div>
+            <div class="flex-fill pl-3">
+                <h6>Tires</h6>
+            </div>
+        </div>
+    </a>
+</div>
+
     <!-- Categories End -->
 
 
@@ -952,7 +938,7 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-     <!-- Carousel Start -->
+      <!-- Carousel Start -->
     <div class="container-fluid mb-3">
         <div class="row px-xl-5">
             <div class="col-lg-8">
@@ -1030,110 +1016,103 @@
     <div class="container-fluid pt-5">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
         <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Brakes.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Braking System</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+           <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=1">
+        <div class="cat-item d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Brakes.png" alt="">
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Suspension_Steering.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Suspension and Steering</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+            <div class="flex-fill pl-3">
+                <h6>Braking System</h6>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Interior.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Interior</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=2">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Suspension_Steering.png" alt="">
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Exterior.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Exterior</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+            <div class="flex-fill pl-3">
+                <h6>Suspension and Steering</h6>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Wheel_Tire.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Wheel/Rim</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=3">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Interior.png" alt="">
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Engine.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Engine Components</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+            <div class="flex-fill pl-3">
+                <h6>Interior</h6>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Oil_Filter.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Filters</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=4">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Exterior.png" alt="">
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/Tyre.png" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Tires</h6>
-                            <%--<small class="text-body">100 Products</small>--%>
-                        </div>
-                    </div>
-                </a>
+            <div class="flex-fill pl-3">
+                <h6>Exterior</h6>
             </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=7">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Wheel_Tire.png" alt="">
+            </div>
+            <div class="flex-fill pl-3">
+                <h6>Wheel/Rim</h6>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=5">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Engine.png" alt="">
+            </div>
+            <div class="flex-fill pl-3">
+                <h6>Engine Components</h6>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=6">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Oil_Filter.png" alt="">
+            </div>
+            <div class="flex-fill pl-3">
+                <h6>Filters</h6>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <a class="text-decoration-none" href="Shop.aspx?Category=8">
+        <div class="cat-item img-zoom d-flex align-items-center mb-4">
+            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                <img class="img-fluid" src="img/Tyre.png" alt="">
+            </div>
+            <div class="flex-fill pl-3">
+                <h6>Tires</h6>
+            </div>
+        </div>
+    </a>
+</div>
+
     <!-- Categories End -->
 
 
