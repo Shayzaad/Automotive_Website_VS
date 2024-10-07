@@ -12,9 +12,13 @@ namespace Front_End
         {
             if (!IsPostBack)
             {
-                if (Request.QueryString["ID"] != null)
+                // Check for both "ID" and "ProductId" in the query string
+                if (Request.QueryString["ID"] != null && int.TryParse(Request.QueryString["ID"], out int productId))
                 {
-                    int productId = int.Parse(Request.QueryString["ID"]);
+                    LoadProductDetails(productId);
+                }
+                else if (Request.QueryString["ProductId"] != null && int.TryParse(Request.QueryString["ProductId"], out productId))
+                {
                     LoadProductDetails(productId);
                 }
                 else
