@@ -66,8 +66,6 @@ namespace Front_End
                     }
 
                     DisProd.InnerHtml = Display;
-                    DisProd2.InnerHtml = Display;
-                    DisProd3.InnerHtml = Display;
                 }
             }
             catch (Exception ex)
@@ -129,8 +127,6 @@ namespace Front_End
                     }
 
                     DiscountProd.InnerHtml = DisplayDis.ToString();
-                    DiscountProd2.InnerHtml = DisplayDis.ToString();
-                    DiscountProd3.InnerHtml = DisplayDis.ToString();
                 }
             }
             catch (Exception ex)
