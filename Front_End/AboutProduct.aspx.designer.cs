@@ -24,15 +24,6 @@ namespace Front_End
         protected global::System.Web.UI.HtmlControls.HtmlImage ProductImage;
 
         /// <summary>
-        /// DisProd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DisProd;
-
-        /// <summary>
         /// ProductName control.
         /// </summary>
         /// <remarks>
@@ -40,6 +31,24 @@ namespace Front_End
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProductName;
+
+        /// <summary>
+        /// ProductRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProductRating;
+
+        /// <summary>
+        /// ReviewCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ReviewCount;
 
         /// <summary>
         /// ProductPrice control.
@@ -67,15 +76,6 @@ namespace Front_End
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProductDescription;
-
-        /// <summary>
-        /// StockQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl StockQuantity;
 
         /// <summary>
         /// QuantityInput control.

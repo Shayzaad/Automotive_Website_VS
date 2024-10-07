@@ -29,30 +29,41 @@ namespace Front_End
             ProductDTO product = SC.GetProductDTO(productId);
             if (product != null)
             {
-                // Map Product to ProductDTO
-                ProductDTO productDTO = new ProductDTO
-                {
-                    ProductID = product.ProductID,
-                    CategoryID = product.CategoryID,
-                    Name = product.Name,
-                    Image = product.Image,
-                    Price = product.Price,
-                    DiscountedPrice = product.DiscountedPrice,
-                    Description = product.Description,
-                    Rating = product.Rating,
-                    StockQuantity = product.StockQuantity
-                };
-
-                ProductImage.Src = productDTO.Image;
-                ProductName.InnerText = productDTO.Name;
-                ProductPrice.InnerText = $"Price: R{productDTO.Price}";
-                DiscountedPrice.InnerText = productDTO.DiscountedPrice != null
-                    ? $"Discounted Price: R{productDTO.DiscountedPrice}"
+                // Populate product details dynamically
+                ProductImage.Src = product.Image;
+                ProductName.InnerText = product.Name;
+                ProductPrice.InnerText = $"Price: R{product.Price}";
+                DiscountedPrice.InnerText = product.DiscountedPrice != null
+                    ? $"Discounted Price: R{product.DiscountedPrice}"
                     : "";
-                ProductDescription.InnerText = productDTO.Description;
-                StockQuantity.InnerText = productDTO.StockQuantity.ToString();
+                ProductDescription.InnerText = product.Description;
+                //StockQuantity.InnerText = product.StockQuantity.ToString();
+                //ReviewCount.InnerText = $"({product.ReviewCount} Reviews)";
+
+                // Generate sizes and colors dynamically
+                //GenerateSizeOptions(product.Sizes);
+                //GenerateColorOptions(product.Colors);
+
+                // Generate rating stars dynamically
+                //GenerateRatingStars(product.Rating);
             }
         }
 
+                
+
+        private void GenerateRatingStars(int rating)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (i < rating)
+                {
+                    ProductRating.InnerHtml += "<small class='fas fa-star'></small>";
+                }
+                else
+                {
+                    ProductRating.InnerHtml += "<small class='far fa-star'></small>";
+                }
+            }
+        }
     }
 }
