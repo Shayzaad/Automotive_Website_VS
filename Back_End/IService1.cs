@@ -28,5 +28,8 @@ namespace Back_End
 
         [OperationContract]
         List<ProductDTO> GetProductByCategory(int CatID);
+
+        [OperationContract]
+        ProductDTO GetProductDTO(int ID);
     }
 }

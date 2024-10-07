@@ -64,7 +64,8 @@ namespace Front_End
                 sb.Append("</div>");
                 sb.Append("</div>");
                 sb.Append("<div class='text-center py-4'>");
-                sb.Append("<a class='h6 text-decoration-none text-truncate' href=''>" + p.Name + "</a>");
+                //sb.Append("<a class='h6 text-decoration-none text-truncate' href=''>" + p.Name + "</a>");
+                sb.Append("<a class='h6 text-decoration-none text-truncate' href='AboutProduct.aspx?ProductId=" + p.ProductID + "'>" + p.Name + "</a>");
                 sb.Append("<div class='d-flex align-items-center justify-content-center mt-2'>");
                 if (p.DiscountedPrice != null)
                 {

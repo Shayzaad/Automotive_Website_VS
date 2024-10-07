@@ -116,6 +116,35 @@ namespace Back_End
             }
         }
 
+        public ProductDTO GetProductDTO(int ID)
+        {
+            var product = (from p in db.Products
+                           where p.ProductID.Equals(ID)
+                           select p).FirstOrDefault();
+
+            if (product != null)
+            {
+                // Map Product to ProductDTO
+                return new ProductDTO
+                {
+                    ProductID = product.ProductID,
+                    CategoryID = product.CategoryID,
+                    Name = product.Name,
+                    Image = product.Image,
+                    Price = product.Price,
+                    DiscountedPrice = product.DiscountedPrice,
+                    Description = product.Description,
+                    Rating = product.Rating,
+                    StockQuantity = product.StockQuantity
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
         public Customer1 GetUserByEmail(string email)
         {
             var user = (from u in db.Customer1s
