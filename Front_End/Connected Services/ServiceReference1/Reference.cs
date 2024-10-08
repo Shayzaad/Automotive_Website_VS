@@ -199,9 +199,6 @@ namespace Front_End.ServiceReference1 {
         private Front_End.ServiceReference1.CartItem[] CartItemsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Front_End.ServiceReference1.Cart[] CartsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Front_End.ServiceReference1.Category CategoryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -253,19 +250,6 @@ namespace Front_End.ServiceReference1 {
                 if ((object.ReferenceEquals(this.CartItemsField, value) != true)) {
                     this.CartItemsField = value;
                     this.RaisePropertyChanged("CartItems");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Front_End.ServiceReference1.Cart[] Carts {
-            get {
-                return this.CartsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CartsField, value) != true)) {
-                    this.CartsField = value;
-                    this.RaisePropertyChanged("Carts");
                 }
             }
         }
@@ -659,179 +643,6 @@ namespace Front_End.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Cart", Namespace="http://schemas.datacontract.org/2004/07/Back_End")]
-    [System.SerializableAttribute()]
-    public partial class Cart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CartIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Front_End.ServiceReference1.CartItem[] CartItemsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreatedAtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Front_End.ServiceReference1.Customer1 Customer1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Front_End.ServiceReference1.Payment[] PaymentsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Front_End.ServiceReference1.Product ProductField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ProductIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal TotalAmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UserIDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CartID {
-            get {
-                return this.CartIDField;
-            }
-            set {
-                if ((this.CartIDField.Equals(value) != true)) {
-                    this.CartIDField = value;
-                    this.RaisePropertyChanged("CartID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Front_End.ServiceReference1.CartItem[] CartItems {
-            get {
-                return this.CartItemsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CartItemsField, value) != true)) {
-                    this.CartItemsField = value;
-                    this.RaisePropertyChanged("CartItems");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedAt {
-            get {
-                return this.CreatedAtField;
-            }
-            set {
-                if ((this.CreatedAtField.Equals(value) != true)) {
-                    this.CreatedAtField = value;
-                    this.RaisePropertyChanged("CreatedAt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Front_End.ServiceReference1.Customer1 Customer1 {
-            get {
-                return this.Customer1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Customer1Field, value) != true)) {
-                    this.Customer1Field = value;
-                    this.RaisePropertyChanged("Customer1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Front_End.ServiceReference1.Payment[] Payments {
-            get {
-                return this.PaymentsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PaymentsField, value) != true)) {
-                    this.PaymentsField = value;
-                    this.RaisePropertyChanged("Payments");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Front_End.ServiceReference1.Product Product {
-            get {
-                return this.ProductField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
-                    this.ProductField = value;
-                    this.RaisePropertyChanged("Product");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ProductID {
-            get {
-                return this.ProductIDField;
-            }
-            set {
-                if ((this.ProductIDField.Equals(value) != true)) {
-                    this.ProductIDField = value;
-                    this.RaisePropertyChanged("ProductID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal TotalAmount {
-            get {
-                return this.TotalAmountField;
-            }
-            set {
-                if ((this.TotalAmountField.Equals(value) != true)) {
-                    this.TotalAmountField = value;
-                    this.RaisePropertyChanged("TotalAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UserID {
-            get {
-                return this.UserIDField;
-            }
-            set {
-                if ((this.UserIDField.Equals(value) != true)) {
-                    this.UserIDField = value;
-                    this.RaisePropertyChanged("UserID");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="InvoiceItem", Namespace="http://schemas.datacontract.org/2004/07/Back_End")]
     [System.SerializableAttribute()]
     public partial class InvoiceItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -957,6 +768,147 @@ namespace Front_End.ServiceReference1 {
                 if ((this.UnitPriceField.Equals(value) != true)) {
                     this.UnitPriceField = value;
                     this.RaisePropertyChanged("UnitPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cart", Namespace="http://schemas.datacontract.org/2004/07/Back_End")]
+    [System.SerializableAttribute()]
+    public partial class Cart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CartIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Front_End.ServiceReference1.CartItem[] CartItemsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreatedAtField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Front_End.ServiceReference1.Customer1 Customer1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Front_End.ServiceReference1.Payment[] PaymentsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CartID {
+            get {
+                return this.CartIDField;
+            }
+            set {
+                if ((this.CartIDField.Equals(value) != true)) {
+                    this.CartIDField = value;
+                    this.RaisePropertyChanged("CartID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Front_End.ServiceReference1.CartItem[] CartItems {
+            get {
+                return this.CartItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CartItemsField, value) != true)) {
+                    this.CartItemsField = value;
+                    this.RaisePropertyChanged("CartItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedAt {
+            get {
+                return this.CreatedAtField;
+            }
+            set {
+                if ((this.CreatedAtField.Equals(value) != true)) {
+                    this.CreatedAtField = value;
+                    this.RaisePropertyChanged("CreatedAt");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Front_End.ServiceReference1.Customer1 Customer1 {
+            get {
+                return this.Customer1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Customer1Field, value) != true)) {
+                    this.Customer1Field = value;
+                    this.RaisePropertyChanged("Customer1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Front_End.ServiceReference1.Payment[] Payments {
+            get {
+                return this.PaymentsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentsField, value) != true)) {
+                    this.PaymentsField = value;
+                    this.RaisePropertyChanged("Payments");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal TotalAmount {
+            get {
+                return this.TotalAmountField;
+            }
+            set {
+                if ((this.TotalAmountField.Equals(value) != true)) {
+                    this.TotalAmountField = value;
+                    this.RaisePropertyChanged("TotalAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
                 }
             }
         }
@@ -1506,6 +1458,131 @@ namespace Front_End.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InvoicesDTO", Namespace="http://schemas.datacontract.org/2004/07/Back_End")]
+    [System.SerializableAttribute()]
+    public partial class InvoicesDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int I_InvoiceIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string I_PDFPathField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime I_PurchaseDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal I_TotalAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int I_UserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal I_VATAmountField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int I_InvoiceID {
+            get {
+                return this.I_InvoiceIDField;
+            }
+            set {
+                if ((this.I_InvoiceIDField.Equals(value) != true)) {
+                    this.I_InvoiceIDField = value;
+                    this.RaisePropertyChanged("I_InvoiceID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string I_PDFPath {
+            get {
+                return this.I_PDFPathField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.I_PDFPathField, value) != true)) {
+                    this.I_PDFPathField = value;
+                    this.RaisePropertyChanged("I_PDFPath");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime I_PurchaseDate {
+            get {
+                return this.I_PurchaseDateField;
+            }
+            set {
+                if ((this.I_PurchaseDateField.Equals(value) != true)) {
+                    this.I_PurchaseDateField = value;
+                    this.RaisePropertyChanged("I_PurchaseDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal I_TotalAmount {
+            get {
+                return this.I_TotalAmountField;
+            }
+            set {
+                if ((this.I_TotalAmountField.Equals(value) != true)) {
+                    this.I_TotalAmountField = value;
+                    this.RaisePropertyChanged("I_TotalAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int I_UserID {
+            get {
+                return this.I_UserIDField;
+            }
+            set {
+                if ((this.I_UserIDField.Equals(value) != true)) {
+                    this.I_UserIDField = value;
+                    this.RaisePropertyChanged("I_UserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal I_VATAmount {
+            get {
+                return this.I_VATAmountField;
+            }
+            set {
+                if ((this.I_VATAmountField.Equals(value) != true)) {
+                    this.I_VATAmountField = value;
+                    this.RaisePropertyChanged("I_VATAmount");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -1539,6 +1616,42 @@ namespace Front_End.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserByEmail", ReplyAction="http://tempuri.org/IService1/GetUserByEmailResponse")]
         System.Threading.Tasks.Task<Front_End.ServiceReference1.Customer1> GetUserByEmailAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductByCategory", ReplyAction="http://tempuri.org/IService1/GetProductByCategoryResponse")]
+        Front_End.ServiceReference1.ProductDTO[] GetProductByCategory(int CatID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductByCategory", ReplyAction="http://tempuri.org/IService1/GetProductByCategoryResponse")]
+        System.Threading.Tasks.Task<Front_End.ServiceReference1.ProductDTO[]> GetProductByCategoryAsync(int CatID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductDTO", ReplyAction="http://tempuri.org/IService1/GetProductDTOResponse")]
+        Front_End.ServiceReference1.ProductDTO GetProductDTO(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductDTO", ReplyAction="http://tempuri.org/IService1/GetProductDTOResponse")]
+        System.Threading.Tasks.Task<Front_End.ServiceReference1.ProductDTO> GetProductDTOAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
+        void UpdateProduct(string productId, int category, string productName, decimal price, string imageUrl, string description, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
+        System.Threading.Tasks.Task UpdateProductAsync(string productId, int category, string productName, decimal price, string imageUrl, string description, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteProduct", ReplyAction="http://tempuri.org/IService1/DeleteProductResponse")]
+        void DeleteProduct(string productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteProduct", ReplyAction="http://tempuri.org/IService1/DeleteProductResponse")]
+        System.Threading.Tasks.Task DeleteProductAsync(string productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
+        bool AddProduct(string name, int category, decimal price, string imageUrl, string description, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
+        System.Threading.Tasks.Task<bool> AddProductAsync(string name, int category, decimal price, string imageUrl, string description, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvoicesByUserId", ReplyAction="http://tempuri.org/IService1/GetInvoicesByUserIdResponse")]
+        Front_End.ServiceReference1.InvoicesDTO[] GetInvoicesByUserId(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvoicesByUserId", ReplyAction="http://tempuri.org/IService1/GetInvoicesByUserIdResponse")]
+        System.Threading.Tasks.Task<Front_End.ServiceReference1.InvoicesDTO[]> GetInvoicesByUserIdAsync(int userId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1606,6 +1719,54 @@ namespace Front_End.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Front_End.ServiceReference1.Customer1> GetUserByEmailAsync(string email) {
             return base.Channel.GetUserByEmailAsync(email);
+        }
+        
+        public Front_End.ServiceReference1.ProductDTO[] GetProductByCategory(int CatID) {
+            return base.Channel.GetProductByCategory(CatID);
+        }
+        
+        public System.Threading.Tasks.Task<Front_End.ServiceReference1.ProductDTO[]> GetProductByCategoryAsync(int CatID) {
+            return base.Channel.GetProductByCategoryAsync(CatID);
+        }
+        
+        public Front_End.ServiceReference1.ProductDTO GetProductDTO(int ID) {
+            return base.Channel.GetProductDTO(ID);
+        }
+        
+        public System.Threading.Tasks.Task<Front_End.ServiceReference1.ProductDTO> GetProductDTOAsync(int ID) {
+            return base.Channel.GetProductDTOAsync(ID);
+        }
+        
+        public void UpdateProduct(string productId, int category, string productName, decimal price, string imageUrl, string description, int quantity) {
+            base.Channel.UpdateProduct(productId, category, productName, price, imageUrl, description, quantity);
+        }
+        
+        public System.Threading.Tasks.Task UpdateProductAsync(string productId, int category, string productName, decimal price, string imageUrl, string description, int quantity) {
+            return base.Channel.UpdateProductAsync(productId, category, productName, price, imageUrl, description, quantity);
+        }
+        
+        public void DeleteProduct(string productId) {
+            base.Channel.DeleteProduct(productId);
+        }
+        
+        public System.Threading.Tasks.Task DeleteProductAsync(string productId) {
+            return base.Channel.DeleteProductAsync(productId);
+        }
+        
+        public bool AddProduct(string name, int category, decimal price, string imageUrl, string description, int quantity) {
+            return base.Channel.AddProduct(name, category, price, imageUrl, description, quantity);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddProductAsync(string name, int category, decimal price, string imageUrl, string description, int quantity) {
+            return base.Channel.AddProductAsync(name, category, price, imageUrl, description, quantity);
+        }
+        
+        public Front_End.ServiceReference1.InvoicesDTO[] GetInvoicesByUserId(int userId) {
+            return base.Channel.GetInvoicesByUserId(userId);
+        }
+        
+        public System.Threading.Tasks.Task<Front_End.ServiceReference1.InvoicesDTO[]> GetInvoicesByUserIdAsync(int userId) {
+            return base.Channel.GetInvoicesByUserIdAsync(userId);
         }
     }
 }

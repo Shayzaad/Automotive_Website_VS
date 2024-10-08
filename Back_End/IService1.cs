@@ -25,5 +25,23 @@ namespace Back_End
 
         [OperationContract]
         Customer1 GetUserByEmail(string email);
+
+        [OperationContract]
+        List<ProductDTO> GetProductByCategory(int CatID);
+
+        [OperationContract]
+        ProductDTO GetProductDTO(int ID);
+
+        [OperationContract]
+        void UpdateProduct(string productId, int category, string productName, decimal price, string imageUrl, string description, int quantity);
+
+        [OperationContract]
+        void DeleteProduct(string productId);
+
+        [OperationContract]
+        bool AddProduct(string name, int category, decimal price, string imageUrl, string description, int quantity);
+
+        [OperationContract]
+        List<InvoicesDTO> GetInvoicesByUserId(int userId);
     }
 }

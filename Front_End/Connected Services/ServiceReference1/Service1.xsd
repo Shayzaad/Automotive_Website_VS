@@ -23,7 +23,6 @@
   <xs:complexType name="Product">
     <xs:sequence>
       <xs:element minOccurs="0" name="CartItems" nillable="true" type="tns:ArrayOfCartItem" />
-      <xs:element minOccurs="0" name="Carts" nillable="true" type="tns:ArrayOfCart" />
       <xs:element minOccurs="0" name="Category" nillable="true" type="tns:Category" />
       <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
@@ -63,8 +62,6 @@
       <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Customer1" nillable="true" type="tns:Customer1" />
       <xs:element minOccurs="0" name="Payments" nillable="true" type="tns:ArrayOfPayment" />
-      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
-      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
       <xs:element minOccurs="0" name="TotalAmount" type="xs:decimal" />
       <xs:element minOccurs="0" name="UserID" type="xs:int" />
     </xs:sequence>
@@ -164,4 +161,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="ArrayOfInvoicesDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoicesDTO" nillable="true" type="tns:InvoicesDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoicesDTO" nillable="true" type="tns:ArrayOfInvoicesDTO" />
+  <xs:complexType name="InvoicesDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="I_InvoiceID" type="xs:int" />
+      <xs:element minOccurs="0" name="I_PDFPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="I_PurchaseDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="I_TotalAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="I_UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="I_VATAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoicesDTO" nillable="true" type="tns:InvoicesDTO" />
 </xs:schema>

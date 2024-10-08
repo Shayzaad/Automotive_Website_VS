@@ -11,34 +11,25 @@ namespace Front_End
 {
 
 
-    public partial class Shop
+    public partial class ManageProducts
     {
 
         /// <summary>
-        /// Prods control.
+        /// productContainer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Prods;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl productContainer;
 
         /// <summary>
-        /// Prods2 control.
+        /// btnAddProduct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Prods2;
-
-        /// <summary>
-        /// Prods3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Prods3;
+        protected global::System.Web.UI.WebControls.Button btnAddProduct;
     }
 }

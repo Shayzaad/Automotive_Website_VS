@@ -69,6 +69,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutProduct.aspx" />
+    <Content Include="AddProduct.aspx" />
     <Content Include="cart.html" />
     <Content Include="checkout.html" />
     <Content Include="Connected Services\ServiceReference1\Front_End.ServiceReference1.Product.datasource">
@@ -78,6 +80,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\Front_End.ServiceReference1.Customer1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\Front_End.ServiceReference1.InvoicesDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiceReference1\Service1.disco" />
@@ -98,6 +103,7 @@
     <Content Include="css\style.css" />
     <Content Include="css\style.min.css" />
     <Content Include="detail.html" />
+    <Content Include="EditProduct.aspx" />
     <Content Include="img\Brakes %281%29.png" />
     <Content Include="img\Brakes.png" />
     <Content Include="img\carousel-1.jpg" />
@@ -146,6 +152,7 @@
     <Content Include="img\Wheel_Tire %281%29.png" />
     <Content Include="img\Wheel_Tire.png" />
     <Content Include="Index.aspx" />
+    <Content Include="Invoices.aspx" />
     <Content Include="js\main.js" />
     <Content Include="lib\animate\animate.min.css" />
     <Content Include="lib\easing\easing.js" />
@@ -164,6 +171,7 @@
     <Content Include="mail\contact.js" />
     <Content Include="mail\contact.php" />
     <Content Include="mail\jqBootstrapValidation.min.js" />
+    <Content Include="ManageProducts.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Shop.aspx" />
     <Content Include="shop.html" />
@@ -173,10 +181,31 @@
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutProduct.aspx.cs">
+      <DependentUpon>AboutProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutProduct.aspx.designer.cs">
+      <DependentUpon>AboutProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -184,6 +213,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices.aspx.cs">
+      <DependentUpon>Invoices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoices.aspx.designer.cs">
+      <DependentUpon>Invoices.aspx</DependentUpon>
     </Compile>
     <Compile Include="Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
@@ -198,6 +234,13 @@
     </Compile>
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ManageProducts.aspx.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageProducts.aspx.designer.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Login.aspx.cs">

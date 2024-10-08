@@ -30,6 +30,9 @@ namespace Back_End
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertCart(Cart instance);
+    partial void UpdateCart(Cart instance);
+    partial void DeleteCart(Cart instance);
     partial void InsertCartItem(CartItem instance);
     partial void UpdateCartItem(CartItem instance);
     partial void DeleteCartItem(CartItem instance);
@@ -54,9 +57,6 @@ namespace Back_End
     partial void InsertProduct(Product instance);
     partial void UpdateProduct(Product instance);
     partial void DeleteProduct(Product instance);
-    partial void InsertCart(Cart instance);
-    partial void UpdateCart(Cart instance);
-    partial void DeleteCart(Cart instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -87,6 +87,14 @@ namespace Back_End
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<Cart> Carts
+		{
+			get
+			{
+				return this.GetTable<Cart>();
+			}
 		}
 		
 		public System.Data.Linq.Table<CartItem> CartItems
@@ -152,13 +160,236 @@ namespace Back_End
 				return this.GetTable<Product>();
 			}
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cart")]
+	public partial class Cart : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		public System.Data.Linq.Table<Cart> Carts
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CartID;
+		
+		private int _UserID;
+		
+		private decimal _TotalAmount;
+		
+		private System.DateTime _CreatedAt;
+		
+		private EntitySet<CartItem> _CartItems;
+		
+		private EntitySet<Payment> _Payments;
+		
+		private EntityRef<Customer1> _Customer1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCartIDChanging(int value);
+    partial void OnCartIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnTotalAmountChanging(decimal value);
+    partial void OnTotalAmountChanged();
+    partial void OnCreatedAtChanging(System.DateTime value);
+    partial void OnCreatedAtChanged();
+    #endregion
+		
+		public Cart()
+		{
+			this._CartItems = new EntitySet<CartItem>(new Action<CartItem>(this.attach_CartItems), new Action<CartItem>(this.detach_CartItems));
+			this._Payments = new EntitySet<Payment>(new Action<Payment>(this.attach_Payments), new Action<Payment>(this.detach_Payments));
+			this._Customer1 = default(EntityRef<Customer1>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CartID
 		{
 			get
 			{
-				return this.GetTable<Cart>();
+				return this._CartID;
 			}
+			set
+			{
+				if ((this._CartID != value))
+				{
+					this.OnCartIDChanging(value);
+					this.SendPropertyChanging();
+					this._CartID = value;
+					this.SendPropertyChanged("CartID");
+					this.OnCartIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._Customer1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalAmount", DbType="Decimal(10,2) NOT NULL")]
+		public decimal TotalAmount
+		{
+			get
+			{
+				return this._TotalAmount;
+			}
+			set
+			{
+				if ((this._TotalAmount != value))
+				{
+					this.OnTotalAmountChanging(value);
+					this.SendPropertyChanging();
+					this._TotalAmount = value;
+					this.SendPropertyChanged("TotalAmount");
+					this.OnTotalAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedAt", DbType="DateTime NOT NULL")]
+		public System.DateTime CreatedAt
+		{
+			get
+			{
+				return this._CreatedAt;
+			}
+			set
+			{
+				if ((this._CreatedAt != value))
+				{
+					this.OnCreatedAtChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedAt = value;
+					this.SendPropertyChanged("CreatedAt");
+					this.OnCreatedAtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cart_CartItem", Storage="_CartItems", ThisKey="CartID", OtherKey="CartID")]
+		public EntitySet<CartItem> CartItems
+		{
+			get
+			{
+				return this._CartItems;
+			}
+			set
+			{
+				this._CartItems.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cart_Payment", Storage="_Payments", ThisKey="CartID", OtherKey="CartID")]
+		public EntitySet<Payment> Payments
+		{
+			get
+			{
+				return this._Payments;
+			}
+			set
+			{
+				this._Payments.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer1_Cart", Storage="_Customer1", ThisKey="UserID", OtherKey="CustomerID", IsForeignKey=true)]
+		public Customer1 Customer1
+		{
+			get
+			{
+				return this._Customer1.Entity;
+			}
+			set
+			{
+				Customer1 previousValue = this._Customer1.Entity;
+				if (((previousValue != value) 
+							|| (this._Customer1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Customer1.Entity = null;
+						previousValue.Carts.Remove(this);
+					}
+					this._Customer1.Entity = value;
+					if ((value != null))
+					{
+						value.Carts.Add(this);
+						this._UserID = value.CustomerID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("Customer1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CartItems(CartItem entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cart = this;
+		}
+		
+		private void detach_CartItems(CartItem entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cart = null;
+		}
+		
+		private void attach_Payments(Payment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cart = this;
+		}
+		
+		private void detach_Payments(Payment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cart = null;
 		}
 	}
 	
@@ -178,9 +409,9 @@ namespace Back_End
 		
 		private decimal _Price;
 		
-		private EntityRef<Product> _Product;
-		
 		private EntityRef<Cart> _Cart;
+		
+		private EntityRef<Product> _Product;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -200,12 +431,12 @@ namespace Back_End
 		
 		public CartItem()
 		{
-			this._Product = default(EntityRef<Product>);
 			this._Cart = default(EntityRef<Cart>);
+			this._Product = default(EntityRef<Product>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartItemID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartItemID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int CartItemID
 		{
 			get
@@ -313,40 +544,6 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_CartItem", Storage="_Product", ThisKey="ProductID", OtherKey="ProductID", IsForeignKey=true)]
-		public Product Product
-		{
-			get
-			{
-				return this._Product.Entity;
-			}
-			set
-			{
-				Product previousValue = this._Product.Entity;
-				if (((previousValue != value) 
-							|| (this._Product.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Product.Entity = null;
-						previousValue.CartItems.Remove(this);
-					}
-					this._Product.Entity = value;
-					if ((value != null))
-					{
-						value.CartItems.Add(this);
-						this._ProductID = value.ProductID;
-					}
-					else
-					{
-						this._ProductID = default(int);
-					}
-					this.SendPropertyChanged("Product");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cart_CartItem", Storage="_Cart", ThisKey="CartID", OtherKey="CartID", IsForeignKey=true)]
 		public Cart Cart
 		{
@@ -377,6 +574,40 @@ namespace Back_End
 						this._CartID = default(int);
 					}
 					this.SendPropertyChanged("Cart");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_CartItem", Storage="_Product", ThisKey="ProductID", OtherKey="ProductID", IsForeignKey=true)]
+		public Product Product
+		{
+			get
+			{
+				return this._Product.Entity;
+			}
+			set
+			{
+				Product previousValue = this._Product.Entity;
+				if (((previousValue != value) 
+							|| (this._Product.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Product.Entity = null;
+						previousValue.CartItems.Remove(this);
+					}
+					this._Product.Entity = value;
+					if ((value != null))
+					{
+						value.CartItems.Add(this);
+						this._ProductID = value.ProductID;
+					}
+					else
+					{
+						this._ProductID = default(int);
+					}
+					this.SendPropertyChanged("Product");
 				}
 			}
 		}
@@ -434,7 +665,7 @@ namespace Back_End
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int CategoryID
 		{
 			get
@@ -454,7 +685,7 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
 		public string CategoryName
 		{
 			get
@@ -474,7 +705,7 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
 		public string Description
 		{
 			get
@@ -546,8 +777,6 @@ namespace Back_End
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _CheckoutID;
-		
 		private int _AddressID;
 		
 		private int _CustomerID;
@@ -564,8 +793,6 @@ namespace Back_End
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnCheckoutIDChanging(int value);
-    partial void OnCheckoutIDChanged();
     partial void OnAddressIDChanging(int value);
     partial void OnAddressIDChanged();
     partial void OnCustomerIDChanging(int value);
@@ -583,26 +810,6 @@ namespace Back_End
 		public CheckOut()
 		{
 			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckoutID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int CheckoutID
-		{
-			get
-			{
-				return this._CheckoutID;
-			}
-			set
-			{
-				if ((this._CheckoutID != value))
-				{
-					this.OnCheckoutIDChanging(value);
-					this.SendPropertyChanging();
-					this._CheckoutID = value;
-					this.SendPropertyChanged("CheckoutID");
-					this.OnCheckoutIDChanged();
-				}
-			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressID", DbType="Int NOT NULL", IsPrimaryKey=true)]
@@ -645,7 +852,7 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Street", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Street", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 		public string Street
 		{
 			get
@@ -665,7 +872,7 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
 		public string City
 		{
 			get
@@ -774,9 +981,9 @@ namespace Back_End
 		
 		private string _Province;
 		
-		private EntitySet<Invoice> _Invoices;
-		
 		private EntitySet<Cart> _Carts;
+		
+		private EntitySet<Invoice> _Invoices;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -808,8 +1015,8 @@ namespace Back_End
 		
 		public Customer1()
 		{
-			this._Invoices = new EntitySet<Invoice>(new Action<Invoice>(this.attach_Invoices), new Action<Invoice>(this.detach_Invoices));
 			this._Carts = new EntitySet<Cart>(new Action<Cart>(this.attach_Carts), new Action<Cart>(this.detach_Carts));
+			this._Invoices = new EntitySet<Invoice>(new Action<Invoice>(this.attach_Invoices), new Action<Invoice>(this.detach_Invoices));
 			OnCreated();
 		}
 		
@@ -833,7 +1040,7 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="VarChar(100)")]
 		public string FirstName
 		{
 			get
@@ -853,7 +1060,7 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="VarChar(100)")]
 		public string LastName
 		{
 			get
@@ -873,7 +1080,7 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
 		public string UserName
 		{
 			get
@@ -1033,19 +1240,6 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer1_Invoice", Storage="_Invoices", ThisKey="CustomerID", OtherKey="UserID")]
-		public EntitySet<Invoice> Invoices
-		{
-			get
-			{
-				return this._Invoices;
-			}
-			set
-			{
-				this._Invoices.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer1_Cart", Storage="_Carts", ThisKey="CustomerID", OtherKey="UserID")]
 		public EntitySet<Cart> Carts
 		{
@@ -1056,6 +1250,19 @@ namespace Back_End
 			set
 			{
 				this._Carts.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer1_Invoice", Storage="_Invoices", ThisKey="CustomerID", OtherKey="UserID")]
+		public EntitySet<Invoice> Invoices
+		{
+			get
+			{
+				return this._Invoices;
+			}
+			set
+			{
+				this._Invoices.Assign(value);
 			}
 		}
 		
@@ -1079,18 +1286,6 @@ namespace Back_End
 			}
 		}
 		
-		private void attach_Invoices(Invoice entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer1 = this;
-		}
-		
-		private void detach_Invoices(Invoice entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer1 = null;
-		}
-		
 		private void attach_Carts(Cart entity)
 		{
 			this.SendPropertyChanging();
@@ -1098,6 +1293,18 @@ namespace Back_End
 		}
 		
 		private void detach_Carts(Cart entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer1 = null;
+		}
+		
+		private void attach_Invoices(Invoice entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer1 = this;
+		}
+		
+		private void detach_Invoices(Invoice entity)
 		{
 			this.SendPropertyChanging();
 			entity.Customer1 = null;
@@ -1255,7 +1462,7 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PDFPath", DbType="NVarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PDFPath", DbType="NVarChar(255)")]
 		public string PDFPath
 		{
 			get
@@ -1398,7 +1605,7 @@ namespace Back_End
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceItemsID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceItemsID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int InvoiceItemsID
 		{
 			get
@@ -1639,7 +1846,7 @@ namespace Back_End
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int PaymentID
 		{
 			get
@@ -1880,7 +2087,7 @@ namespace Back_End
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int ProductID
 		{
 			get
@@ -1924,7 +2131,7 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 		public string Name
 		{
 			get
@@ -1944,7 +2151,7 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 		public string Image
 		{
 			get
@@ -2004,7 +2211,7 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
 		public string Description
 		{
 			get
@@ -2024,7 +2231,7 @@ namespace Back_End
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rating", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rating", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string Rating
 		{
 			get
@@ -2166,237 +2373,6 @@ namespace Back_End
 		{
 			this.SendPropertyChanging();
 			entity.Product = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cart")]
-	public partial class Cart : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _CartID;
-		
-		private int _UserID;
-		
-		private decimal _TotalAmount;
-		
-		private System.DateTime _CreatedAt;
-		
-		private EntitySet<CartItem> _CartItems;
-		
-		private EntitySet<Payment> _Payments;
-		
-		private EntityRef<Customer1> _Customer1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCartIDChanging(int value);
-    partial void OnCartIDChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnTotalAmountChanging(decimal value);
-    partial void OnTotalAmountChanged();
-    partial void OnCreatedAtChanging(System.DateTime value);
-    partial void OnCreatedAtChanged();
-    #endregion
-		
-		public Cart()
-		{
-			this._CartItems = new EntitySet<CartItem>(new Action<CartItem>(this.attach_CartItems), new Action<CartItem>(this.detach_CartItems));
-			this._Payments = new EntitySet<Payment>(new Action<Payment>(this.attach_Payments), new Action<Payment>(this.detach_Payments));
-			this._Customer1 = default(EntityRef<Customer1>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int CartID
-		{
-			get
-			{
-				return this._CartID;
-			}
-			set
-			{
-				if ((this._CartID != value))
-				{
-					this.OnCartIDChanging(value);
-					this.SendPropertyChanging();
-					this._CartID = value;
-					this.SendPropertyChanged("CartID");
-					this.OnCartIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._Customer1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalAmount", DbType="Decimal(10,2) NOT NULL")]
-		public decimal TotalAmount
-		{
-			get
-			{
-				return this._TotalAmount;
-			}
-			set
-			{
-				if ((this._TotalAmount != value))
-				{
-					this.OnTotalAmountChanging(value);
-					this.SendPropertyChanging();
-					this._TotalAmount = value;
-					this.SendPropertyChanged("TotalAmount");
-					this.OnTotalAmountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedAt", DbType="DateTime NOT NULL")]
-		public System.DateTime CreatedAt
-		{
-			get
-			{
-				return this._CreatedAt;
-			}
-			set
-			{
-				if ((this._CreatedAt != value))
-				{
-					this.OnCreatedAtChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedAt = value;
-					this.SendPropertyChanged("CreatedAt");
-					this.OnCreatedAtChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cart_CartItem", Storage="_CartItems", ThisKey="CartID", OtherKey="CartID")]
-		public EntitySet<CartItem> CartItems
-		{
-			get
-			{
-				return this._CartItems;
-			}
-			set
-			{
-				this._CartItems.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cart_Payment", Storage="_Payments", ThisKey="CartID", OtherKey="CartID")]
-		public EntitySet<Payment> Payments
-		{
-			get
-			{
-				return this._Payments;
-			}
-			set
-			{
-				this._Payments.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer1_Cart", Storage="_Customer1", ThisKey="UserID", OtherKey="CustomerID", IsForeignKey=true)]
-		public Customer1 Customer1
-		{
-			get
-			{
-				return this._Customer1.Entity;
-			}
-			set
-			{
-				Customer1 previousValue = this._Customer1.Entity;
-				if (((previousValue != value) 
-							|| (this._Customer1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Customer1.Entity = null;
-						previousValue.Carts.Remove(this);
-					}
-					this._Customer1.Entity = value;
-					if ((value != null))
-					{
-						value.Carts.Add(this);
-						this._UserID = value.CustomerID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("Customer1");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_CartItems(CartItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cart = this;
-		}
-		
-		private void detach_CartItems(CartItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cart = null;
-		}
-		
-		private void attach_Payments(Payment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cart = this;
-		}
-		
-		private void detach_Payments(Payment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cart = null;
 		}
 	}
 }

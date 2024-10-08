@@ -116,6 +116,34 @@ namespace Back_End
             }
         }
 
+        public ProductDTO GetProductDTO(int ID)
+        {
+            var product = (from p in db.Products
+                           where p.ProductID.Equals(ID)
+                           select p).FirstOrDefault();
+
+            if (product != null)
+            {
+                // Map Product to ProductDTO
+                return new ProductDTO
+                {
+                    ProductID = product.ProductID,
+                    CategoryID = product.CategoryID,
+                    Name = product.Name,
+                    Image = product.Image,
+                    Price = product.Price,
+                    DiscountedPrice = product.DiscountedPrice,
+                    Description = product.Description,
+                    Rating = product.Rating,
+                    StockQuantity = product.StockQuantity
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public Customer1 GetUserByEmail(string email)
         {
             var user = (from u in db.Customer1s
@@ -137,6 +165,116 @@ namespace Back_End
                 return null;
             }
         }
+
+        public List<ProductDTO> GetProductByCategory(int CatID)
+        {
+            List<ProductDTO> productList = new List<ProductDTO>();
+
+            dynamic products = db.Products.ToList();
+
+            if (products != null && products.Count > 0)
+            {
+                foreach (dynamic product in products)
+                {
+                    if (product.CategoryID == CatID)
+                    {
+                        ProductDTO productDto = new ProductDTO
+                        {
+                            ProductID = product.ProductID,
+                            CategoryID = product.CategoryID,
+                            Name = product.Name,
+                            Image = product.Image,
+                            Price = product.Price,
+                            DiscountedPrice = product.DiscountedPrice,
+                            Description = product.Description,
+                            Rating = product.Rating,
+                            StockQuantity = product.StockQuantity
+                        };
+
+                        productList.Add(productDto);
+                    }
+                }
+            }
+
+            return productList;
+        }
+
+        public void UpdateProduct(string productId,int Category, string productName, decimal price, string imageUrl, string description, int quantity)
+        {
+            var product = db.Products.SingleOrDefault(p => p.ProductID.Equals(productId));
+            if (product != null)
+            {
+                product.Name = productName;
+                product.CategoryID = Category;
+                product.Price = price;
+                product.Image = imageUrl;
+                product.Description = description;
+                product.StockQuantity = quantity;
+                db.SubmitChanges();
+            }
+        }
+
+        public void DeleteProduct(string productId)
+        {
+            var product = db.Products.SingleOrDefault(p => p.ProductID.Equals(productId));
+            if (product != null)
+            {
+                db.Products.DeleteOnSubmit(product);
+                db.SubmitChanges();
+            }
+        }
+
+        public bool AddProduct(string name, int categoryID, decimal price, string imageUrl, string description, int quantity)
+        {
+            var Prod = new Product()
+            {
+                Name = name,
+                CategoryID = categoryID,
+                Price = price,
+                Description = description,
+                StockQuantity = quantity,
+                Image = imageUrl
+            };
+
+            db.Products.InsertOnSubmit(Prod);
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                e.GetBaseException();
+                return false;
+            }
+        }
+
+        public List<InvoicesDTO> GetInvoicesByUserId(int userId)
+        {
+            try
+            {
+                var result = db.Invoices
+                               .Where(i => i.UserID == userId)
+                               .OrderByDescending(i => i.PurchaseDate) //Order by date, most recent first
+                               .Select(i => new InvoicesDTO
+                               {
+                                   I_InvoiceID = i.InvoiceID,
+                                   I_UserID = i.UserID,
+                                   I_TotalAmount = i.TotalAmount,
+                                   I_VATAmount = i.VATAmount,
+                                   I_PurchaseDate = i.PurchaseDate,
+                                   I_PDFPath = i.PDFPath
+                               })
+                               .ToList();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error retrieving invoices: " + ex.Message);
+                return new List<InvoicesDTO>();
+            }
+        }
+
     }
 
     public class ProductDTO
@@ -150,6 +288,23 @@ namespace Back_End
         public string Description { get; set; } // Description of the product
         public string Rating { get; set; } // Rating of the product, possibly as a string representation
         public int StockQuantity { get; set; } // Quantity of the product in stock
+    }
+
+    [DataContract]
+    public class InvoicesDTO
+    {
+        [DataMember]
+        public int I_InvoiceID { get; set; }
+        [DataMember]
+        public int I_UserID { get; set; }
+        [DataMember]
+        public decimal I_TotalAmount { get; set; }
+        [DataMember]
+        public decimal I_VATAmount { get; set; }
+        [DataMember]
+        public DateTime I_PurchaseDate { get; set; }
+        [DataMember]
+        public string I_PDFPath { get; set; }
     }
 }
 

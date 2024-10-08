@@ -36,7 +36,7 @@ namespace Front_End
                             Display += "<div class='product-img position-relative overflow-hidden'>";
                             Display += $"<img class='img-fluid w-100' src='{p.Image}' alt='{p.Name}'>";
                             Display += "<div class='product-action'>";
-                            Display += "<a class='btn btn-outline-dark btn-square' href='Cart.aspx'><i class='fa fa-shopping-cart'></i></a>";
+                            Display += "<a class='btn btn-outline-dark btn-square' href='Cart.aspx?AddToCart=" + p.ProductID + "'><i class='fa fa-shopping-cart'></i></a>";
                             Display += "<a class='btn btn-outline-dark btn-square' href='Wishlist.aspx'><i class='far fa-heart'></i></a>";
                             Display += "</div>";
                             Display += "</div>";
@@ -98,7 +98,7 @@ namespace Front_End
                             DisplayDis += "<div class='product-img position-relative overflow-hidden'>";
                             DisplayDis += $"<img class='img-fluid w-100' src='{p.Image}' alt='{p.Name}'>";
                             DisplayDis += "<div class='product-action'>";
-                            DisplayDis += "<a class='btn btn-outline-dark btn-square' href='Cart.aspx'><i class='fa fa-shopping-cart'></i></a>";
+                            DisplayDis += "<a class='btn btn-outline-dark btn-square' href='Cart.aspx?AddToCart=" + p.ProductID + "'><i class='fa fa-shopping-cart'></i></a>";
                             DisplayDis += "<a class='btn btn-outline-dark btn-square' href='Wishlist.aspx'><i class='far fa-heart'></i></a>";
                             DisplayDis += "</div>";
                             DisplayDis += "</div>";
