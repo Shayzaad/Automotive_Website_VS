@@ -57,6 +57,9 @@ namespace Back_End
     partial void InsertCart(Cart instance);
     partial void UpdateCart(Cart instance);
     partial void DeleteCart(Cart instance);
+    partial void InsertSale(Sale instance);
+    partial void UpdateSale(Sale instance);
+    partial void DeleteSale(Sale instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -158,6 +161,14 @@ namespace Back_End
 			get
 			{
 				return this.GetTable<Cart>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Sale> Sales
+		{
+			get
+			{
+				return this.GetTable<Sale>();
 			}
 		}
 	}
@@ -1846,6 +1857,8 @@ namespace Back_End
 		
 		private EntitySet<InvoiceItem> _InvoiceItems;
 		
+		private EntitySet<Sale> _Sales;
+		
 		private EntityRef<Category> _Category;
 		
     #region Extensibility Method Definitions
@@ -1876,6 +1889,7 @@ namespace Back_End
 		{
 			this._CartItems = new EntitySet<CartItem>(new Action<CartItem>(this.attach_CartItems), new Action<CartItem>(this.detach_CartItems));
 			this._InvoiceItems = new EntitySet<InvoiceItem>(new Action<InvoiceItem>(this.attach_InvoiceItems), new Action<InvoiceItem>(this.detach_InvoiceItems));
+			this._Sales = new EntitySet<Sale>(new Action<Sale>(this.attach_Sales), new Action<Sale>(this.detach_Sales));
 			this._Category = default(EntityRef<Category>);
 			OnCreated();
 		}
@@ -2090,6 +2104,19 @@ namespace Back_End
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Sale", Storage="_Sales", ThisKey="ProductID", OtherKey="ProductID")]
+		public EntitySet<Sale> Sales
+		{
+			get
+			{
+				return this._Sales;
+			}
+			set
+			{
+				this._Sales.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Product", Storage="_Category", ThisKey="CategoryID", OtherKey="CategoryID", IsForeignKey=true)]
 		public Category Category
 		{
@@ -2163,6 +2190,18 @@ namespace Back_End
 		}
 		
 		private void detach_InvoiceItems(InvoiceItem entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = null;
+		}
+		
+		private void attach_Sales(Sale entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = this;
+		}
+		
+		private void detach_Sales(Sale entity)
 		{
 			this.SendPropertyChanging();
 			entity.Product = null;
@@ -2397,6 +2436,181 @@ namespace Back_End
 		{
 			this.SendPropertyChanging();
 			entity.Cart = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Sales")]
+	public partial class Sale : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _SaleID;
+		
+		private int _ProductID;
+		
+		private int _QuantitySold;
+		
+		private System.DateTime _SaleDate;
+		
+		private EntityRef<Product> _Product;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSaleIDChanging(int value);
+    partial void OnSaleIDChanged();
+    partial void OnProductIDChanging(int value);
+    partial void OnProductIDChanged();
+    partial void OnQuantitySoldChanging(int value);
+    partial void OnQuantitySoldChanged();
+    partial void OnSaleDateChanging(System.DateTime value);
+    partial void OnSaleDateChanged();
+    #endregion
+		
+		public Sale()
+		{
+			this._Product = default(EntityRef<Product>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaleID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int SaleID
+		{
+			get
+			{
+				return this._SaleID;
+			}
+			set
+			{
+				if ((this._SaleID != value))
+				{
+					this.OnSaleIDChanging(value);
+					this.SendPropertyChanging();
+					this._SaleID = value;
+					this.SendPropertyChanged("SaleID");
+					this.OnSaleIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL")]
+		public int ProductID
+		{
+			get
+			{
+				return this._ProductID;
+			}
+			set
+			{
+				if ((this._ProductID != value))
+				{
+					if (this._Product.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProductIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProductID = value;
+					this.SendPropertyChanged("ProductID");
+					this.OnProductIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuantitySold", DbType="Int NOT NULL")]
+		public int QuantitySold
+		{
+			get
+			{
+				return this._QuantitySold;
+			}
+			set
+			{
+				if ((this._QuantitySold != value))
+				{
+					this.OnQuantitySoldChanging(value);
+					this.SendPropertyChanging();
+					this._QuantitySold = value;
+					this.SendPropertyChanged("QuantitySold");
+					this.OnQuantitySoldChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaleDate", DbType="DateTime NOT NULL")]
+		public System.DateTime SaleDate
+		{
+			get
+			{
+				return this._SaleDate;
+			}
+			set
+			{
+				if ((this._SaleDate != value))
+				{
+					this.OnSaleDateChanging(value);
+					this.SendPropertyChanging();
+					this._SaleDate = value;
+					this.SendPropertyChanged("SaleDate");
+					this.OnSaleDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Sale", Storage="_Product", ThisKey="ProductID", OtherKey="ProductID", IsForeignKey=true)]
+		public Product Product
+		{
+			get
+			{
+				return this._Product.Entity;
+			}
+			set
+			{
+				Product previousValue = this._Product.Entity;
+				if (((previousValue != value) 
+							|| (this._Product.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Product.Entity = null;
+						previousValue.Sales.Remove(this);
+					}
+					this._Product.Entity = value;
+					if ((value != null))
+					{
+						value.Sales.Add(this);
+						this._ProductID = value.ProductID;
+					}
+					else
+					{
+						this._ProductID = default(int);
+					}
+					this.SendPropertyChanged("Product");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

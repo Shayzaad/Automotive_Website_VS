@@ -71,6 +71,7 @@
   <ItemGroup>
     <Content Include="AboutProduct.aspx" />
     <Content Include="cart.html" />
+    <Content Include="Checkout.aspx" />
     <Content Include="checkout.html" />
     <Content Include="Connected Services\ServiceReference1\Front_End.ServiceReference1.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -166,6 +167,7 @@
     <Content Include="mail\contact.php" />
     <Content Include="mail\jqBootstrapValidation.min.js" />
     <Content Include="Register.aspx" />
+    <Content Include="Report.aspx" />
     <Content Include="Shop.aspx" />
     <Content Include="shop.html" />
     <Content Include="vid\BMW_M4 %281%29.mp4" />
@@ -180,6 +182,13 @@
     </Compile>
     <Compile Include="AboutProduct.aspx.designer.cs">
       <DependentUpon>AboutProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -221,6 +230,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
     </Compile>
     <Compile Include="Secrecy.cs" />
     <Compile Include="Shop.aspx.cs">
