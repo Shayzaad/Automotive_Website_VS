@@ -95,8 +95,8 @@
                     <label for="txtProductName">Product Name:</label>
                     <asp:TextBox ID="txtProductName" runat="server" required ="required"></asp:TextBox>
 
-                    <label for="txtCategory">Description:</label>
-                    <asp:TextBox ID="txtCategory" runat="server" TextMode="MultiLine" required ="required"></asp:TextBox>
+                    <label for="txtCategory">CategoryID:</label>
+                    <asp:TextBox ID="txtCategory" runat="server" Text="[1-8]" TextMode="MultiLine" required ="required"></asp:TextBox>
 
                     <label for="txtDescription">Description:</label>
                     <asp:TextBox ID="txtDescription" runat="server" required ="required"></asp:TextBox>
