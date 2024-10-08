@@ -12,3 +12,10 @@ C:\Users\yashv\Documents\GitHub\Automotive_Website_VS\Back_End\obj\Debug\Back_En
 C:\Users\yashv\Documents\GitHub\Automotive_Website_VS\Back_End\obj\Debug\Back_End.csproj.CoreCompileInputs.cache
 C:\Users\yashv\Documents\GitHub\Automotive_Website_VS\Back_End\obj\Debug\Back_End.dll
 C:\Users\yashv\Documents\GitHub\Automotive_Website_VS\Back_End\obj\Debug\Back_End.pdb
+C:\Users\kalan\Documents\GitHub\Automotive_Website_VS\Back_End\bin\Back_End.dll.config
+C:\Users\kalan\Documents\GitHub\Automotive_Website_VS\Back_End\bin\Back_End.dll
+C:\Users\kalan\Documents\GitHub\Automotive_Website_VS\Back_End\bin\Back_End.pdb
+C:\Users\kalan\Documents\GitHub\Automotive_Website_VS\Back_End\obj\Debug\Back_End.csproj.AssemblyReference.cache
+C:\Users\kalan\Documents\GitHub\Automotive_Website_VS\Back_End\obj\Debug\Back_End.csproj.CoreCompileInputs.cache
+C:\Users\kalan\Documents\GitHub\Automotive_Website_VS\Back_End\obj\Debug\Back_End.dll
+C:\Users\kalan\Documents\GitHub\Automotive_Website_VS\Back_End\obj\Debug\Back_End.pdb

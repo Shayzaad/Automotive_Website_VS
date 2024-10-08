@@ -1458,6 +1458,131 @@ namespace Front_End.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InvoicesDTO", Namespace="http://schemas.datacontract.org/2004/07/Back_End")]
+    [System.SerializableAttribute()]
+    public partial class InvoicesDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int I_InvoiceIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string I_PDFPathField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime I_PurchaseDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal I_TotalAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int I_UserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal I_VATAmountField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int I_InvoiceID {
+            get {
+                return this.I_InvoiceIDField;
+            }
+            set {
+                if ((this.I_InvoiceIDField.Equals(value) != true)) {
+                    this.I_InvoiceIDField = value;
+                    this.RaisePropertyChanged("I_InvoiceID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string I_PDFPath {
+            get {
+                return this.I_PDFPathField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.I_PDFPathField, value) != true)) {
+                    this.I_PDFPathField = value;
+                    this.RaisePropertyChanged("I_PDFPath");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime I_PurchaseDate {
+            get {
+                return this.I_PurchaseDateField;
+            }
+            set {
+                if ((this.I_PurchaseDateField.Equals(value) != true)) {
+                    this.I_PurchaseDateField = value;
+                    this.RaisePropertyChanged("I_PurchaseDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal I_TotalAmount {
+            get {
+                return this.I_TotalAmountField;
+            }
+            set {
+                if ((this.I_TotalAmountField.Equals(value) != true)) {
+                    this.I_TotalAmountField = value;
+                    this.RaisePropertyChanged("I_TotalAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int I_UserID {
+            get {
+                return this.I_UserIDField;
+            }
+            set {
+                if ((this.I_UserIDField.Equals(value) != true)) {
+                    this.I_UserIDField = value;
+                    this.RaisePropertyChanged("I_UserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal I_VATAmount {
+            get {
+                return this.I_VATAmountField;
+            }
+            set {
+                if ((this.I_VATAmountField.Equals(value) != true)) {
+                    this.I_VATAmountField = value;
+                    this.RaisePropertyChanged("I_VATAmount");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -1503,6 +1628,30 @@ namespace Front_End.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductDTO", ReplyAction="http://tempuri.org/IService1/GetProductDTOResponse")]
         System.Threading.Tasks.Task<Front_End.ServiceReference1.ProductDTO> GetProductDTOAsync(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
+        void UpdateProduct(string productId, int category, string productName, decimal price, string imageUrl, string description, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
+        System.Threading.Tasks.Task UpdateProductAsync(string productId, int category, string productName, decimal price, string imageUrl, string description, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteProduct", ReplyAction="http://tempuri.org/IService1/DeleteProductResponse")]
+        void DeleteProduct(string productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteProduct", ReplyAction="http://tempuri.org/IService1/DeleteProductResponse")]
+        System.Threading.Tasks.Task DeleteProductAsync(string productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
+        bool AddProduct(string name, int category, decimal price, string imageUrl, string description, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
+        System.Threading.Tasks.Task<bool> AddProductAsync(string name, int category, decimal price, string imageUrl, string description, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvoicesByUserId", ReplyAction="http://tempuri.org/IService1/GetInvoicesByUserIdResponse")]
+        Front_End.ServiceReference1.InvoicesDTO[] GetInvoicesByUserId(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvoicesByUserId", ReplyAction="http://tempuri.org/IService1/GetInvoicesByUserIdResponse")]
+        System.Threading.Tasks.Task<Front_End.ServiceReference1.InvoicesDTO[]> GetInvoicesByUserIdAsync(int userId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1586,6 +1735,38 @@ namespace Front_End.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Front_End.ServiceReference1.ProductDTO> GetProductDTOAsync(int ID) {
             return base.Channel.GetProductDTOAsync(ID);
+        }
+        
+        public void UpdateProduct(string productId, int category, string productName, decimal price, string imageUrl, string description, int quantity) {
+            base.Channel.UpdateProduct(productId, category, productName, price, imageUrl, description, quantity);
+        }
+        
+        public System.Threading.Tasks.Task UpdateProductAsync(string productId, int category, string productName, decimal price, string imageUrl, string description, int quantity) {
+            return base.Channel.UpdateProductAsync(productId, category, productName, price, imageUrl, description, quantity);
+        }
+        
+        public void DeleteProduct(string productId) {
+            base.Channel.DeleteProduct(productId);
+        }
+        
+        public System.Threading.Tasks.Task DeleteProductAsync(string productId) {
+            return base.Channel.DeleteProductAsync(productId);
+        }
+        
+        public bool AddProduct(string name, int category, decimal price, string imageUrl, string description, int quantity) {
+            return base.Channel.AddProduct(name, category, price, imageUrl, description, quantity);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddProductAsync(string name, int category, decimal price, string imageUrl, string description, int quantity) {
+            return base.Channel.AddProductAsync(name, category, price, imageUrl, description, quantity);
+        }
+        
+        public Front_End.ServiceReference1.InvoicesDTO[] GetInvoicesByUserId(int userId) {
+            return base.Channel.GetInvoicesByUserId(userId);
+        }
+        
+        public System.Threading.Tasks.Task<Front_End.ServiceReference1.InvoicesDTO[]> GetInvoicesByUserIdAsync(int userId) {
+            return base.Channel.GetInvoicesByUserIdAsync(userId);
         }
     }
 }
